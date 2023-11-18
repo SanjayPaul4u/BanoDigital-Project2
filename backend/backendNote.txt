@@ -32,4 +32,9 @@ app.use(express.urlencoded({extended:false}));
 
     login:
     ________
+
+    getuser:
+    ________
+    i> Middleware function create for fetchUser 🟢✔
+        
     

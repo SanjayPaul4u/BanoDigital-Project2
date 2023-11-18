@@ -1,5 +1,6 @@
 const Users = require("../models/userModel");
 const { body, validationResult } = require('express-validator');
+const bcrypt = require("bcryptjs")
 
 // SIGNUP FUNCTION  
 const signupFunc = async(req, res, next) =>{
@@ -54,5 +55,69 @@ const signupFunc = async(req, res, next) =>{
         res.status(500).json({success, error:error.message})
     }
 }
+// LOGIN FUNCTION 
+const loginFunc = async(req, res, next) =>{
+    try {
+        let success = false
+        const email = req.body.email;
+        const password = req.body.password;
+        const user_data = await Users.findOne({email});
 
-module.exports = signupFunc;
+        // email check📌
+        if(!user_data){
+            success = false
+            return res.status(400).json({success, message:"Invalid CreadentialsE"})
+        }
+        // password check📌
+        const isPassword = await bcrypt.compare(password, user_data.password);
+        if(!isPassword){
+            success = false
+            return res.status(400).json({success, message:"Invalid CreadentialsP"})
+        }
+
+        // final login code📌
+        const token = await user_data.createToken();
+        // if there is not toke 📌
+        if(!token){
+            success = false
+            return res.status(400).json({success, message:"Token not generated"});
+        }
+        success = true
+        res.status(201).json({token, success, message:"LoggedIn successfully"})
+
+    } catch (error) {
+        success = false
+        console.log("LOGIN ERROR********");
+        console.log(error);
+        res.status(500).json({success, error:error.message})
+    }
+}
+
+// GETUSER FUNCTION
+const getUserFunc = async(req, res) =>{
+    try {
+        console.log(req.user);
+        console.log(req.token);
+        let success = false
+        const _id = req.user._id;
+        const user_data = await Users.findOne({_id});
+        if(!user_data){
+            success = false;
+            return res.status(404).json({success, message:"Not Found"});
+        }
+        success = true;
+        res.status(200).json({success, message:"Got User successfully", user_data});
+
+    } catch (error) {
+        success = false
+        console.log("GET USER ERROR********");
+        console.log(error);
+        res.status(500).json({success, error:error.message}) 
+    }
+}
+
+module.exports = {
+    signupFunc,
+    loginFunc,
+    getUserFunc
+};

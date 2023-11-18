@@ -1,6 +1,7 @@
 const express = require("express");
 const { body, validationResult } = require('express-validator');
-const signupFunc = require("../controller/authController");
+const {signupFunc, loginFunc, getUserFunc} = require("../controller/authController");
+const fetchUser = require('../middleware/fetchUser');
 
 const router = express.Router();
 // all auth routes
@@ -14,6 +15,11 @@ router.post("/signup", [
     body("confirmPassword", "min length of password should be 3*").isLength({min:3}),
     body("confirmPassword", "max length of password should be 20*").isLength({max: 20}),
 ], signupFunc);
+// ROUTE 2: login : POST - /api/auth/login
+router.post("/login", loginFunc);
+
+// ROUTE 3: getuser : GET - /api/auth/getuser
+router.get("/getuser/:token", fetchUser, getUserFunc);
 
 
 // export auth route
