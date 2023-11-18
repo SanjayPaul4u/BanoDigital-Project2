@@ -5,3 +5,10 @@
 --------------------------------------------
 2. Routs create in this app
     const router = express.Router();
+--------------------------------------------
+3. Mongoose Connection create
+    npm i mongoose
+--------------------------------------------
+4. dotenv evironment variable create
+    npm i dotenv
+    require("dotenv").config();

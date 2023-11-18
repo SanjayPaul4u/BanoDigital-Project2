@@ -2,6 +2,7 @@ const express =  require("express");
 const authRouter = require("./routes/auth-route");
 const reviewRouter = require("./routes/review-route");
 const contactRouter = require("./routes/contact-route");
+require("./db/db");
 
 // middle ware
 const app = express();
