@@ -12,3 +12,24 @@
 4. dotenv evironment variable create
     npm i dotenv
     require("dotenv").config();
+--------------------------------------------
+5. mongoose schema and model create fon users, reviews, contacts
+
+--------------------------------------------
+6. Rest api create
+app.use(express.json());
+app.use(express.urlencoded({extended:false})); 
+    signup:
+    ________
+    i> password hashing 🟢✔
+        - npm i bcryptjs
+
+    ii> token create 🟢✔
+        - npm i json web toke
+
+    iii> express-validation add
+        - npm i express-validation
+
+    login:
+    ________
+    

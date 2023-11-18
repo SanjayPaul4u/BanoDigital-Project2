@@ -10,6 +10,9 @@ const app = express();
 // define
 const host  = "127.0.0.1";
 const port = process.env.PORT || 5500;
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 // routing
 app.use("/api/auth", authRouter);
