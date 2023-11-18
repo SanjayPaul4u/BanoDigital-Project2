@@ -6,7 +6,7 @@
 2. Routs create in this app
     const router = express.Router();
 --------------------------------------------
-3. Mongoose Connection create
+3. Mongoose Connection create and
     npm i mongoose
 --------------------------------------------
 4. dotenv evironment variable create
