@@ -1,0 +1,7 @@
+--------------------------------------------
+1. Simple express app create
+    npm i
+    npm i express
+--------------------------------------------
+2. Routs create in this app
+    const router = express.Router();
