@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended:false}));
     ii> token create 🟢✔
         - npm i json web toke
 
-    iii> express-validation add
+    iii> express-validation add 🟢✔
         - npm i express-validation
 
     login:

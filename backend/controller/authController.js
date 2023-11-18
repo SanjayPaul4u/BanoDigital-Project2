@@ -1,9 +1,18 @@
 const Users = require("../models/userModel");
+const { body, validationResult } = require('express-validator');
 
 // SIGNUP FUNCTION  
 const signupFunc = async(req, res, next) =>{
     try {
         let success = false
+        // check validation by express-validator📌
+
+        const result = validationResult(req);
+        if (!result.isEmpty()) {
+            success = false
+            return res.json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
+        }
+
         // check email already exists or not📌
         const isEmail = await Users.findOne({email:req.body.email});
         if(isEmail){
