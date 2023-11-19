@@ -14,9 +14,9 @@ router.post("/signup", [
     body("password", "max length of password should be 20*").isLength({max:20}),
     body("confirmPassword", "min length of password should be 3*").isLength({min:3}),
     body("confirmPassword", "max length of password should be 20*").isLength({max: 20}),
-], signupFunc);
+], signupFunc);// NO AUTHENTICATION REQUIRED📌
 // ROUTE 2: login : POST - /api/auth/login
-router.post("/login", loginFunc);
+router.post("/login", loginFunc);// NO AUTHENTICATION REQUIRED📌
 
 // ROUTE 3: getuser : GET - /api/auth/getuser
 router.get("/getuser/:token", fetchUser, getUserFunc);

@@ -36,5 +36,17 @@ app.use(express.urlencoded({extended:false}));
     getuser:
     ________
     i> Middleware function create for fetchUser 🟢✔
+
+-----------------------------------------------------------
+7. Rest Api create
+    addReview🟢✔
+    ______________
+    getReview🟢✔
+    ______________
+    getAllReview🟢✔
+    ______________
+    updateReviewById🟢✔
+    ______________
+    deleteReviewById🟢✔
         
     

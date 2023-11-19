@@ -7,7 +7,9 @@ const reviewSchema = new mongoose.Schema({
     },
     starCount:{
         type: Number,
-        require: true
+        require: true,
+        min: [1, "Star Count Must be 1 to 5"],
+        max: [5, "Star Count Must be 1 to 5"]
     },
     reviewMsg:{
         type: String,
