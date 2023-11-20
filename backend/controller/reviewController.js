@@ -5,7 +5,6 @@ const { body, validationResult } = require('express-validator');
 const addReviewFunc = async(req, res, next)=>{
     let success = false
         // check validation by express-validator📌
-
         const result = validationResult(req);
         if (!result.isEmpty()) {
             success = false
