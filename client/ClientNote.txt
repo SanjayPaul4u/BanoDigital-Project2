@@ -1,0 +1,10 @@
+npx create-react-app client
+setup react application
+__________________________
+npm i concurrently
+"both": "concurrently \"npm start\" \"nodemon ../backend/index.js\""
+npm run both
+        "if you added .envfile in backend then token will be not generated while concurrenty use in frontend"
+___________________________
+
+1. Setup react application (add bootstrap, favicon, content and title);
