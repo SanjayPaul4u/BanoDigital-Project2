@@ -1,0 +1,48 @@
+#main-navbar{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.container-navbar{
+    padding: 0rem 3rem;
+}
+.my-default-navbar{
+    margin-top: 3.6rem;
+}
+.my-navbar-scroll{
+    background-color: #9dacb6;
+    transition: 1s;
+}
+
+.navbar-brand-style{
+    color: #303030;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.default-navbar-brand-style{
+    color: #303030;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.my-text-color{
+    color: #fff;
+    font-weight: 600;
+
+}   
+.default-text-color{
+    color: #7a7a7a;
+    font-weight: 600;
+}
+#navbar-ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 10rem;
+
+}
+#brandLogo{
+    height: 2.5rem;
+    margin-right: 0.8rem;
+}
+.navbar-nav .nav-link{
+    margin-right: 2rem;
+}

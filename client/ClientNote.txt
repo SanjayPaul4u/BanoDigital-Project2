@@ -8,3 +8,5 @@ npm run both
 ___________________________
 
 1. Setup react application (add bootstrap, favicon, content and title);
+
+2. Complete Work on Navbar and Offer Aleart
