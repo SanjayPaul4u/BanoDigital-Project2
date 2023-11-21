@@ -27,7 +27,10 @@ const Banner = () => {
                         {/* button todo */}
                         <div className="btn btn-sm btn-primary">Order Now</div>
                     </div>
-
+                    
+                    <div className='textForUnderstandUser1'>
+                        <h6>Scroll down to see other content &darr;</h6>
+                    </div>
                 </div>
             {/* right banner row (right-CAROUSEL) --------------------------------------------------*/}
                 <div className='col-12 col-md-6 col-xl-6' id="right-banner-raw">
@@ -110,7 +113,9 @@ const Banner = () => {
 
 
 
-
+                        <div className='textForUnderstandUser2'>
+                            <h6 >Some demo websites</h6>
+                        </div>
                     </div>
                 </div>
              {/* right banner end--------------------------------------------*/}
