@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* font-family: 'Luckiest Guy', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+
+#main-banner{
+    /* background-color: #e3e3e3; */
+    height: 70vh;
+}
+#main-banner .row{
+    /* background-color: #e3e3e3; */
+    height: 100%;
+}
+/* ---------------------------------------------------------------------------- */
+#left-banner-raw{
+    /* background-color: rgb(255, 239, 239); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+#left-banner-raw #five-star{
+    color: #fbb736;
+}
+#left-banner-raw h3{
+    font-family: 'Kanit', sans-serif;
+    color: #404040;
+    font-size: 1.6rem;
+}
+#left-banner-raw h1{
+    font-family: 'Luckiest Guy', cursive;
+    color: #303030;
+    font-size: 2.2rem;
+}
+
+#left-banner-raw h1 span{
+    color: #a82222;
+}
+#left-banner-raw p{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #7a7a7a;
+}
+/* ---------------------------------------------------------------------------- */
+#right-banner-raw{
+    /* background-color: #e3e3e3; */
+    height: 100%;
+    padding: 0;
+}
+#left-carausel-row-1{
+
+}
+#right-banner-raw #carouselExampleIndicators{
+    width: 27rem;
+}
+#right-banner-raw #carouselExampleIndicators img{
+    height: 34.5rem;
+}
+
+#right-carausel-row-2{
+    
+}
+#right-banner-raw #carouselExampleControls{
+    margin-left: 1rem;
+    width: 27rem;
+}
+#right-banner-raw #carouselExampleControls img{
+    height: 34.5rem;
+}

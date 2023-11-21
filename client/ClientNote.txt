@@ -1,3 +1,6 @@
+https://nicepage.com/website-design?term=cake
+https://dribbble.com/shots/7078969-Arino-Joomla-eCommerce-Template
+
 npx create-react-app client
 setup react application
 __________________________
@@ -7,6 +10,6 @@ npm run both
         "if you added .envfile in backend then token will be not generated while concurrenty use in frontend"
 ___________________________
 
-1. Setup react application (add bootstrap, favicon, content and title);
+FrontEnd: 1. Setup react application (add bootstrap, favicon, content and title);
 
-2. Complete Work on Navbar and Offer Aleart
+FrontEnd: 2. Complete Work on Navbar and Offer Aleart
