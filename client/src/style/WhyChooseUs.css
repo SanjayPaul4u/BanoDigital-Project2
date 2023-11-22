@@ -1,0 +1,8 @@
+#main-whychooseus{
+    background-color: #efefef;
+    background: linear-gradient(to bottom, #e1e1e1  25%, #efefef 75%);
+    height: 75vh;
+
+    padding-top: 15rem;
+    text-align: center;
+}

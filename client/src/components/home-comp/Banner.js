@@ -25,7 +25,7 @@ const Banner = () => {
 
                     <div className='mt-4'>
                         {/* button todo */}
-                        <div className="btn btn-sm btn-primary">Order Now</div>
+                        <a href='/' id='banner-btn' className="btn btn-primary">Order Now</a>
                     </div>
                     
                     <div className='textForUnderstandUser1'>

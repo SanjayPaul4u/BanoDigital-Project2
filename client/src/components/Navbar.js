@@ -57,6 +57,10 @@ const Navbar = () => {
                 <li className="nav-item">
                 <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Review</a>
                 </li>
+
+                <li className="nav-item">
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Price</a>
+                </li>
             </ul>
           {/* -----------------------------------------------------  📌*/}
               {/* SEARCH ICON 📌*/}

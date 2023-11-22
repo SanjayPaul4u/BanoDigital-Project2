@@ -2,7 +2,7 @@ https://nicepage.com/website-design?term=cake
 https://dribbble.com/shots/7078969-Arino-Joomla-eCommerce-Template
 
 npx create-react-app client
-setup react application
+setup react application by --> rafce (react arrow function component export)
 __________________________
 npm i concurrently
 "both": "concurrently \"npm start\" \"nodemon ../backend/index.js\""
@@ -17,3 +17,5 @@ FrontEnd: 2. Complete Work on Navbar and Offer Aleart
 FrontEnd: 3. Complete Work on Home-Banner Page
 
 FrontEnd: 4. Refactoring Banner Page
+
+FrontEnd: 5. Complete Work done on Home-Price Page
