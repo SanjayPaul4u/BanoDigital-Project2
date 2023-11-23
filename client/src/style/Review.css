@@ -24,17 +24,19 @@
 /* ---------------------------------------------------------- */
 #main-review .row #right-review-row{
     background: linear-gradient(to bottom right, #efefef 50%, #4c4c4c 100%);
-    background-color: rgb(237, 223, 223);
+    /* background-color: rgb(210, 91, 91); */
     padding: 1rem;
-    padding-top: 3rem;
 }
 #main-review .row #right-review-row h3, h4{
     color: #303030;
     font-family: 'Kanit', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 }
 #main-review .row #right-review-row h4{
-    color: #606060;
+    color: #959595;
+    font-weight: 400;
+    margin-top: -0.6rem;
+    font-size: 1.4rem;
 }
 #reviews-div{
     padding-top: 1rem;
@@ -64,7 +66,7 @@
     margin-top: -1rem;
     display: inline-block;
     background-color: #b4b4b4;
-    box-shadow: 0.1rem 0.1rem 0.3rem #373737;
+    box-shadow: 0.1rem 0.2rem 0.4rem rgb(115, 115, 115);
     text-align: center;
     height: 4rem;
     width: 4rem;
@@ -74,6 +76,13 @@
     border-radius: 50%;
     font-weight: 500;
     color: #fff;
+}
+#reviews-div .review-card .review-star{
+    color: #fbb736;
+    margin-top: -3rem;
+    /* text-align: end; */
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
 }
 #reviews-div .review-card .sub-review-card{
     margin-top: -2rem;

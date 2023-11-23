@@ -28,7 +28,16 @@ const Review = () => {
           <div id='reviews-div'>
 
             <div className='review-card' id="review-card-1">
-                  <span className='dp'>D</span>
+              <div>
+                  <div className='dp'>D</div>
+                  <div className='review-star'>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
+              </div>
               <div className='sub-review-card'>
                   <p>Exceptional service! Their team delivers top-notch websites with creativity and precision. Timely, reliable, and a pleasure to work with</p>
                   <h6>- Dipanjan</h6>
@@ -36,7 +45,15 @@ const Review = () => {
             </div>
 
             <div className='review-card' id="review-card-2">
-                <div className='dp'>S</div>
+              <div>
+                  <div className='dp'>S</div>
+                  <div className='review-star'>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
+              </div>
               <div className='sub-review-card'>
                 <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
                 <h6>- Suma</h6>
