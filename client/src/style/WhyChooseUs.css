@@ -1,8 +1,61 @@
 #main-whychooseus{
     background-color: #efefef;
     background: linear-gradient(to bottom, #e1e1e1  25%, #efefef 75%);
-    height: 75vh;
-
-    padding-top: 15rem;
-    text-align: center;
+    height: 90vh;
+    padding-top: 7rem;
 }
+/* --------------------------------------------------------------------- */
+#chooseus-left-row{
+    font-family: 'Kanit', sans-serif;
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+}
+#chooseus-left-row #main-whychooseus-header h3{
+    color: #303030;
+    font-weight: 600;
+}
+#chooseus-left-row #main-whychooseus-header p{
+    color: #7a7a7a;
+    font-weight: 500;
+}
+#chooseus-left-row .row{
+}
+#chooseus-left-row .row .why-row{
+}
+#chooseus-left-row .row .why-row div{
+    background-color: #7bceff;
+    height: 12rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-top: 3rem solid #00c3ff;
+    animation: whyChooseDiv 4s linear 1s infinite;
+}
+#chooseus-left-row .row .why-row div img{
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+    
+}
+/* --------------------------------------------------------------------- */
+#chooseus-right-row{
+}
+#chooseus-right-row #img-div{
+}
+#chooseus-right-row #chooseus-img{
+    height: 42rem;
+    margin-top: -4.2rem;
+    margin-left: -7rem;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* The animation code */
+@keyframes whyChooseDiv {
+    0%   {background-color:#87b4ce; left:0px; top:0px;}
+    50%  {background-color:#fdffd1; left:200px; top:200px;}
+    55%  {background-color:#87b4ce; left:200px; top:200px;}
+    100% {background-color:#87b4ce; left:0px; top:0px;}
+  }

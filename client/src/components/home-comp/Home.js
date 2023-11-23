@@ -3,6 +3,8 @@ import "../../style/Home.css"
 import Banner from './Banner'
 import Price from './Price'
 import WhyChooseUs from './WhyChooseUs'
+import Review from './Review'
+
 
 
 
@@ -14,6 +16,7 @@ const Home = () => {
         <Banner/>
         <Price/>
         <WhyChooseUs/>
+        <Review/>
 
     </div>
   )

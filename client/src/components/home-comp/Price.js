@@ -22,7 +22,7 @@ const Price = () => {
                   <h5 className="card-title">Portfolio</h5>
                 <div className="card-body">
                   <div className='card-body-head'>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <i className="fa-solid fa-indian-rupee-sign"></i>
                     <h3> 9,999</h3>
                   </div>
                   <h6>Onwords</h6>
@@ -39,7 +39,7 @@ const Price = () => {
                   <h5 className="card-title">Business</h5>
                 <div className="card-body">
                   <div className='card-body-head'>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <i className="fa-solid fa-indian-rupee-sign"></i>
                     <h3> 14,999</h3>
                   </div>
                   <h6>Onwords</h6>
@@ -56,7 +56,7 @@ const Price = () => {
                   <h5 className="card-title">E-Commerce</h5>
                 <div className="card-body">
                   <div className='card-body-head'>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <i className="fa-solid fa-indian-rupee-sign"></i>
                     <h3> 19,999</h3>
                   </div>
                   <h6>Onwords</h6>
@@ -73,7 +73,7 @@ const Price = () => {
                   <h5 className="card-title">Customize</h5>
                 <div className="card-body">
                   <div className='card-body-head'>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <i className="fa-solid fa-indian-rupee-sign"></i>
                     <h3> Quote</h3>
                   </div>
                   <h6>Quotation</h6>
