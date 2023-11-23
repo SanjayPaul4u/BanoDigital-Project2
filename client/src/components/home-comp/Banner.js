@@ -33,7 +33,7 @@ const Banner = () => {
                     </div>
                 </div>
             {/* right banner row (right-CAROUSEL) --------------------------------------------------*/}
-                <div className='col-12 col-md-6 col-xl-6' id="right-banner-raw">
+                <div className='col-12 col-md-6 col-xl-6' id="right-banner-row">
                     <div className="row">
 
 

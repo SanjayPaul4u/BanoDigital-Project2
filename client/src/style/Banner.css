@@ -13,6 +13,7 @@
 #main-banner .row{
     /* background-color: #e3e3e3; */
     height: 100%;
+    margin: 0rem; /*by defauld - change*/
 }
 /* ---------------------------------------------------------------------------- */
 #left-banner-raw{
@@ -59,29 +60,33 @@
     background: linear-gradient(to left, #00ccff 0%, #9933ff 100%);
 }
 /* ---------------------------------------------------------------------------- */
-#right-banner-raw{
+#right-banner-row{
     /* background-color: #af2d2d; */
     height: 100%;
     padding: 0;
+    margin: 0rem;
 }
 #left-carausel-row-1{
-
+    padding: 0rem;
+    margin-left: -1.5rem;
+    margin-right: 1.5rem;
+    
 }
-#right-banner-raw #carouselExampleIndicators{
+#right-banner-row #carouselExampleIndicators{
     width: 27rem;
 }
-#right-banner-raw #carouselExampleIndicators img{
+#right-banner-row #carouselExampleIndicators img{
     height: 33.5rem;
 }
 
 #right-carausel-row-2{
-    
+    padding: 0rem;
 }
-#right-banner-raw #carouselExampleControls{
+#right-banner-row #carouselExampleControls{
     margin-left: 1rem;
     width: 27rem;
 }
-#right-banner-raw #carouselExampleControls img{
+#right-banner-row #carouselExampleControls img{
     height: 33.5rem;
 }
 .textForUnderstandUser2{

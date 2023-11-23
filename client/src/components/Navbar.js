@@ -47,19 +47,23 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
 
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">About</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/about">About</a>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Contact</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/contact">Contact</a>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Review</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-review">Review</a>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Price</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-price">Price</a>
+                </li>
+
+                <li className="nav-item">
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-whychooseus">Why We?</a>
                 </li>
             </ul>
           {/* -----------------------------------------------------  📌*/}
