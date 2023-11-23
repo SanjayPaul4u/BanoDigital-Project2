@@ -32,7 +32,8 @@
     align-items: center;
     font-size: 2rem;
     border-top: 3rem solid #00c3ff;
-    animation: whyChooseDiv 4s linear 1s infinite;
+    /* animation: whyChooseDiv 4s linear 1s infinite; */
+    
 }
 #chooseus-left-row .row .why-row div img{
     height: 4rem;
@@ -44,6 +45,8 @@
 #chooseus-right-row{
 }
 #chooseus-right-row #img-div{
+    background-color: white;
+    border-radius: 75% 25% 70% 30% / 43% 78% 22% 57%  ;
 }
 #chooseus-right-row #chooseus-img{
     height: 42rem;
@@ -53,9 +56,9 @@
 
 /* -------------------------------------------------------------------------------------------------- */
 /* The animation code */
-@keyframes whyChooseDiv {
+/* @keyframes whyChooseDiv {
     0%   {background-color:#87b4ce; left:0px; top:0px;}
     50%  {background-color:#fdffd1; left:200px; top:200px;}
     55%  {background-color:#87b4ce; left:200px; top:200px;}
     100% {background-color:#87b4ce; left:0px; top:0px;}
-  }
+  } */

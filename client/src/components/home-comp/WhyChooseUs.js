@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
 
             <div id="main-whychooseus-header">
               <h3>Why Choose Us</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquam ullam amet blanditiis maxime molestiae debitis natus dolores sunt officiis, libero veritatis labore quae perspiciatis.</p>
+              <p>Choose us for expert full-stack development—blending cutting-edge design with powerful functionality. Timely delivery, client-focused, and committed to crafting unique online experiences. Your satisfaction, our main priority.</p>
             </div>
 
             <div className="row">

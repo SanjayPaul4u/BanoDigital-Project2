@@ -21,3 +21,5 @@ FrontEnd: 4. Refactoring Banner Page
 FrontEnd: 5. Complete Work done on Home-Price Page
 
 FrontEnd: 6. Complete Work done on Home-WhyChooseUs Page
+
+FrontEnd: 7. Complete Work done on Home-Review Page
