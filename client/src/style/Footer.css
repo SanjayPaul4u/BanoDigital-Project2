@@ -6,15 +6,31 @@
 /* font-family: 'Ubuntu', sans-serif; */
 
 #main-footer{
-    font-family: 'Kanit', sans-serif;
-    text-align: center;
-    height: 30vh;
     background-color: #3e3e3e;
-    color: white;
+    height: 30vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
+#main-footer-content{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+#main-footer-content .main-footer-topic h4{
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+}
+#main-footer-content .main-footer-topic ul li{
+    list-style: none;
+    color: #d6d5d5;
+}
+#main-footer-content .main-footer-topic ul li a{
+    font-family: 'Ubuntu', sans-serif;
+   text-decoration: none;
+}
+/* --------------------------------- */
 #sub-main-footer{
     font-family: 'Ubuntu', sans-serif;
     background-color: #535353;
@@ -25,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
 #sub-main-footer img{
     height: 1.5rem;

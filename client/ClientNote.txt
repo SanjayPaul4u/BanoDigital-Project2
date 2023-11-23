@@ -25,3 +25,5 @@ FrontEnd: 6. Complete Work done on Home-WhyChooseUs Page
 FrontEnd: 7. Complete Work done on Home-Review Page
 
 FrontEnd: 8. Refactoring Home-Review Page
+
+FrontEnd: 9. Complete Work done on Footer Page

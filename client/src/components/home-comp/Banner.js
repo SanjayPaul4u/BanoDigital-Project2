@@ -74,7 +74,7 @@ const Banner = () => {
                     </div>
 
                     {/* RIGHT - CARAUSEL2  */}
-                    <div className="col-md-4 col-xl-4 position-relative" id='right-carausel-row-2'>
+                    <div className="col-md-4 col-xl-4 position-relative" id='right-carausel-row-2' style={{overflow:"hidden"}}>
                         <div id="carouselExampleControls" className="carousel slide position-absolute" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
@@ -98,15 +98,6 @@ const Banner = () => {
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>
                         </button>
-                        </div>
-
-                        <div className='position-absolute' style={{
-                            backgroundColor:"#fff",
-                            height: "100%",
-                            width: "150%",
-                            marginLeft:"82%"
-                        }}>
-                            {/* this div made for cover the half-second-carausel📌*/}
                         </div>
                     </div>
 
