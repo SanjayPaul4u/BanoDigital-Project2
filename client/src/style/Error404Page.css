@@ -1,5 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+
+
 #main-404page{
     height: 100vh;
     padding: 0rem 3rem;
     padding-top: 10rem;
+}
+#main-404page #heading{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#main-404page #heading h2{
+    font-size: 15rem;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: -3.2rem;
+    font-weight: 700;
+    color: #d5d5d5;
+}
+#main-404page #sub-404page{
+    background-color:#d5d5d5;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+#main-404page #sub-404page h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4rem;
+    font-weight: 200;
+    color: #484848;
+}
+#main-404page #sub-404page p{
+    font-family: 'Kanit', sans-serif;
+    color: #484848;
+}
+#main-404page #sub-404page .btn{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: none;
+    font-weight: 500;
+    background: linear-gradient(to right, #9933ff 0%, #00ccff 100%);
+}
+#main-404page #sub-404page .btn:hover{
+    background: linear-gradient(to left, #9933ff 0%, #00ccff 100%);
 }

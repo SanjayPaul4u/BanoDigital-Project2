@@ -62,7 +62,7 @@ const Review = () => {
 
             <div className=''>
               <a className='btn btn-sm btn-primary' href="/addreview">Rate Us</a>
-              <a className='btn btn-sm btn-primary mx-2' href="/review">More Review</a>
+              <a className='btn btn-sm btn-primary mx-2' href="/mainreview">More Review</a>
             </div>
             
           </div>
