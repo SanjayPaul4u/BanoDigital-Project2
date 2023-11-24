@@ -1,10 +1,30 @@
 import React from 'react'
+import '../style/Login.css'
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div>
-        <h3>this is Login page</h3>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, enim, molestiae obcaecati vitae omnis dolores quaerat quae labore saepe repudiandae magnam. Mollitia accusantium, ut doloribus harum voluptatem fugiat neque dicta.lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium quas eligendi quod fuga perspiciatis unde nulla, temporibus quasi earum molestiae esse nemo, atque eaque. Error corporis amet maiores aliquid excepturi!
+    <div className='container' id='main-login'>
+        <div id="sub-login-div">
+          <div id='heading-div'>
+            <h3>Login</h3>
+          </div>
+          <form>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+              <input type="password" className="form-control" id="exampleInputPassword1"/>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+
+            <div id='footer-div'>
+              <p>Don't have account? <Link to="/signup">SignUp</Link></p>
+            </div>
+        </form>
+        </div>
     </div>
   )
 }

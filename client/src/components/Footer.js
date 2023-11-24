@@ -31,9 +31,9 @@ const Footer = () => {
         <div className="main-footer-topic">
           <ul>
             <h4>Contact</h4>
-            <li><i class="fa-solid fa-phone"></i> 9064784593</li>
-            <li><i class="fa-solid fa-envelope"></i> sanjoypaul655@gmail.com</li>
-            <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239">LinkedIn</a> </li>
+            <li><i className="fa-solid fa-phone"></i> 9064784593</li>
+            <li><i className="fa-solid fa-envelope"></i> sanjoypaul655@gmail.com</li>
+            <li><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239">LinkedIn</a> </li>
           </ul>
         </div>
         <div className="main-footer-topic">
