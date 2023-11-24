@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "../style/Navbar.css"
 import BrandLogo from '../images/connection.png'
 import OfferAlert from './alers-comp/OfferAlert'
+import { Link } from 'react-router-dom'
+
 
 
 const Navbar = () => {
@@ -33,7 +35,7 @@ const Navbar = () => {
     <nav className={` navbar navbar-expand-lg fixed-top ${!IsScroll?"my-default-navbar":"my-navbar-scroll"}`} id='main-navbar'>
         <div className={`container container-navbar`}>
             <img src={BrandLogo} alt="brandImgErr" id='brandLogo'/>
-            <a className={`navbar-brand ${!IsScroll?"default-navbar-brand-style":"navbar-brand-style"}`} href="/">BanoDigital</a>
+            <Link className={`navbar-brand ${!IsScroll?"default-navbar-brand-style":"navbar-brand-style"}`} to="/">BanoDigital</Link>
 
             <button className="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={funcResponsive}>
             <span className="navbar-toggler-icon"></span>
@@ -43,27 +45,33 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" id='navbar-ul'>
                 <li className="nav-item">
-                <a className={`nav-link active ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/">Home</a>
+                <Link className={`nav-link active ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
 
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/about">About</a>
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/about">About</Link>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/contact">Contact</a>
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-review">Review</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Review</a>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-price">Price</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-price">Price</a>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="#main-whychooseus">Why We?</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-whychooseus">Why We?</a>
+                </li>
+                <li className="nav-item">
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/login">LogIn</Link>
+                </li>
+                <li className="nav-item">
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/signup">SignUp</Link>
                 </li>
             </ul>
           {/* -----------------------------------------------------  📌*/}

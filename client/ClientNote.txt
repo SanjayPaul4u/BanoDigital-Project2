@@ -27,3 +27,19 @@ FrontEnd: 7. Complete Work done on Home-Review Page
 FrontEnd: 8. Refactoring Home-Review Page
 
 FrontEnd: 9. Complete Work done on Footer Page
+
+FrontEnd: 10. Complete Work done on react-router-dom
+                - import {BrowserRouter, Routes,Route} from 'react-router-dom'
+                - <BrowserRouter>
+                        <Navbar/>
+                        <Routes>
+                        <Route exact path='/' element={<Home/>}/>
+                        <Route exact path='/home' element={<Home/>}/>
+                        <Route exact path='/login' element={<Login/>}/>
+                        <Route exact path='/signup' element={<Signup/>}/>
+                        </Routes>
+                        <Footer/>
+                </BrowserRouter>
+
+                - "a" to "Link"
+                - "herf" to "to"
