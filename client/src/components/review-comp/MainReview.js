@@ -1,10 +1,22 @@
 import React from 'react'
 import "../../style/MainReview.css"
+import DisplayReview from './DisplayReview'
+import AddReview from './AddReview'
+
 
 const MainReview = () => {
   return (
-    <div id='main-mainReview'>
-        <h2>This is MainReview Page</h2>
+    <div className='container' id='main-mainReview'>
+
+      <div className="row">
+        <div className="col-10 col-md-6 col-xl-6" id='displayReview-Row'>
+            <DisplayReview/>
+        </div>
+        <div className="col-10 col-md-6 col-xl-6" id='addReview-Row'>
+            <AddReview/>
+        </div>
+      </div>
+
     </div>
   )
 }

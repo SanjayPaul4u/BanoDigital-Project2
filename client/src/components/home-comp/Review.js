@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../style/Review.css"
 import WebDesignPng from '../../images/wev-design.png'
+import {Link} from 'react-router-dom'
 
 const Review = () => {
   return (
@@ -20,7 +21,7 @@ const Review = () => {
         {/* right-review-row */}
         <div className="col-10 col-md-6 col-xl-6" id='right-review-row'>
           <div id='main-review-heading'>
-              <h3>Review</h3>
+              <h3>Rating & Reviews</h3>
               <h4>What Our Client Say</h4>
           </div>
 
@@ -50,8 +51,9 @@ const Review = () => {
                   <div className='review-star'>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                   </div>
               </div>
               <div className='sub-review-card'>
@@ -61,8 +63,8 @@ const Review = () => {
             </div>
 
             <div className=''>
-              <a className='btn btn-sm btn-primary' href="/addreview">Rate Us</a>
-              <a className='btn btn-sm btn-primary mx-2' href="/mainreview">More Review</a>
+              <Link className='btn btn-sm btn-primary' to="/addreview">Rate Us</Link>
+              <Link className='btn btn-sm btn-primary mx-2' to="/mainreview">More Review</Link>
             </div>
             
           </div>

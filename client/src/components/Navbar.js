@@ -47,17 +47,13 @@ const Navbar = () => {
                 <li className="nav-item">
                 <Link className={`nav-link active ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/">Home</Link>
                 </li>
-                <li className="nav-item">
-
-                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/about">About</Link>
-                </li>
-
+                
                 <li className="nav-item">
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Review</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Rating & Reviews</a>
                 </li>
 
                 <li className="nav-item">
