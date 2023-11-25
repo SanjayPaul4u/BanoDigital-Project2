@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
     <OfferAlert IsScroll={IsScroll}/>
 
-    {/* MAIN NAV-BAR 📌 */}
+    {/* MAIN NAV-BAR 📌  ----bg-danger*/}
     <nav className={` navbar navbar-expand-lg fixed-top ${!IsScroll?"my-default-navbar":"my-navbar-scroll"}`} id='main-navbar'>
         <div className={`container container-navbar`}>
             <img src={BrandLogo} alt="brandImgErr" id='brandLogo'/>

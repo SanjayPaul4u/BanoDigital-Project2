@@ -49,3 +49,5 @@ FrontEnd: 11. Complete Work done on Login and Signup Page
 FrontEnd: 12. Simple Work on About, Content, MainReview, Error404Page  
 
 FrontEnd: 13. Complete Work done on Error404Page  
+
+FrontEnd: 14. Complete Work done on Contact Page
