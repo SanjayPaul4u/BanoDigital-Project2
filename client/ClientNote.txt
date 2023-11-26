@@ -56,3 +56,18 @@ FrontEnd: 15. Work continuing in Add Review Page
 
 FrontEnd: 16. Complete Work done on Main-Review Page
 
+
+FrontEnd: 17. Redux store nad Slice Create 📌
+        -npm i @reduxjs/toolkit
+        -npm i react-redux
+
+        1: SLICE CREATE
+        import { createSlice } from '@reduxjs/toolkit'
+
+        2. STORE CREATE
+        import { configureStore } from '@reduxjs/toolkit'
+
+        3. CONNECT REDUX-STORE TO react
+        import {Provider} from "react-redux"
+        import store
+

@@ -14,11 +14,11 @@ const AddReview = () => {
           <div id="add-review-div">
             <h5>Rate Us</h5>
             <div id="rating-stars">
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+              <i className="fa-regular fa-star"></i>
+              <i className="fa-regular fa-star"></i>
+              <i className="fa-regular fa-star"></i>
+              <i className="fa-regular fa-star"></i>
+              <i className="fa-regular fa-star"></i>
             </div>
             
             <form>
@@ -45,8 +45,8 @@ const AddReview = () => {
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
+                <i className="fa-regular fa-star"></i>
             </div>
                            
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa placeat consequuntur rerum suscipit aliquid a aspernatur tempore quisquam, quis ducimus atque ipsum, perspiciatis, optio beatae?</p>

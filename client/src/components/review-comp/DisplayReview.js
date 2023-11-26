@@ -15,7 +15,7 @@ const DisplayReview = () => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                   </div>
               </div>
               <div className='sub-display-review-card'>
@@ -48,7 +48,7 @@ const DisplayReview = () => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                   </div>
               </div>
               <div className='sub-display-review-card'>
@@ -64,8 +64,8 @@ const DisplayReview = () => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                   </div>
               </div>
               <div className='sub-display-review-card'>
@@ -82,7 +82,7 @@ const DisplayReview = () => {
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    <i className="fa-regular fa-star"></i>
                   </div>
               </div>
               <div className='sub-display-review-card'>
