@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?margin-bottomfamily=Kanit:wght@500&display=swap');
 /* font-family: 'Kanit', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 /* font-family: 'Luckiest Guy', cursive; */
@@ -15,7 +15,7 @@
 }
 /* 📌📌---------------------------------------------------------------------------------------------------------- */
 #displayReview-Row{
-    padding-left: 1.7rem;
+    padding-left: 2rem;
     padding-top: 0.7rem;
 }
 
@@ -68,16 +68,17 @@
 
 /* 📌📌---------------------------------------------------------------------------------------------------------- */
 #addReview-Row{
-    padding:1rem;
-    background-color: #efefef;
+    padding:0rem;
     border-radius: 0.2rem;
 }
 #addReview-Row #main-review-heading{
+    display:none ; /*📌📌*/
     font-family: 'Kanit', sans-serif; 
     color: #303030;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #efefef;
     padding: 0.8rem;
-    border: 0.1rem solid rgb(208, 208, 208);
+    /* border: 0.1rem solid #dadada; */
 
 }
 #addReview-Row #main-review-heading p{
@@ -88,14 +89,63 @@
 }
 #addReview-Row #add-review-div{
     background-color: #f77049;
-    border: 0.1rem solid rgb(208, 208, 208);
-    height: 18rem;
-    margin-top: 1rem;
+    min-height: 13rem;
+    height: auto;
+    padding: 1rem;
+}
+#addReview-Row #add-review-div h5{
+    color: #fff;
+}
+#addReview-Row #add-review-div #rating-stars{
+    font-size: 2rem;
+    cursor: pointer;    
+}
+#addReview-Row #add-review-div textarea{
+    background-color: #8f8f8f;
+    border-radius: 0rem;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 0.5rem;
+}
+#addReview-Row #add-review-div textarea::placeholder{
+    color: rgb(205, 205, 205);
+    font-family: 'Ubuntu', sans-serif;
+}
+#addReview-Row #add-review-div .btn{
+    border-radius: 0rem;
+    outline: none;
+    border: none;
+    background-color: #00000047;
+    color: #fff;
+    font-weight: 600;
+}
+#addReview-Row #add-review-div .btn:hover{
+    background-color: #fff;
+    color: #f77049;
 }
 #addReview-Row #user-review-div{
     background-color: #f77049;
-    border: 0.1rem solid rgb(208, 208, 208);
-    height: 8rem;
-    margin-top: 1rem;
+    height: 13rem;
+    padding: 1rem;
+    
+}
+#addReview-Row #user-review-div h5{
+    color: #fff;
+}
+#addReview-Row #user-review-div #rated-stars{
+    color: #fbb736;
+    font-size: 1.2rem;
+}
+#addReview-Row #user-review-div p{
+    color: #303030;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+}
+#addReview-Row #user-review-div h6{
+    color: #303030;
+    text-align: end;
+    margin-top: -1rem;
 }
 
