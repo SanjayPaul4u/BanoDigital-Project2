@@ -44,16 +44,13 @@ const Navbar = () => {
             {/* -----------------------------------------------------📌 */}
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" id='navbar-ul'>
+
                 <li className="nav-item">
                 <Link className={`nav-link active ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/">Home</Link>
                 </li>
                 
                 <li className="nav-item">
-                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
-                </li>
-
-                <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Rating & Reviews</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-whychooseus">Why We?</a>
                 </li>
 
                 <li className="nav-item">
@@ -61,8 +58,13 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-whychooseus">Why We?</a>
+                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Rating & Reviews</a>
                 </li>
+
+                <li className="nav-item">
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
+                </li>
+                
                 <li className="nav-item">
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/login">LogIn</Link>
                 </li>
@@ -72,6 +74,7 @@ const Navbar = () => {
             </ul>
           {/* -----------------------------------------------------  📌*/}
               {/* SEARCH ICON 📌*/}
+              <h6 className='mx-2'>User</h6>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>

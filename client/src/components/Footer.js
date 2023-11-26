@@ -3,6 +3,7 @@ import '../style/Footer.css'
 import linkedinImg from '../images/linkedin.png'
 import whatsappImg from '../images/whatsapp.png'
 import facebookImg from '../images/facebook.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -21,11 +22,10 @@ const Footer = () => {
         <div className="main-footer-topic">
           <ul>
             <h4> Pages </h4>
-            <li> <a href="/home"> Home </a> </li>
-            <li> <a href="/about"> About </a> </li>
-            <li> <a href="/contact"> Contact </a> </li>
-            <li> <a href="/review"> Review </a> </li>
-            <li> <a href="/price"> Price </a> </li>
+            <li> <Link to="/home"> Home </Link> </li>
+            <li> <Link to="/contact"> Contact </Link> </li>
+            <li> <Link to="/mainreview"> Rate Us </Link> </li>
+            <li> <Link to="/mainreview"> Rating And Reviews </Link> </li>
           </ul>
         </div>
         <div className="main-footer-topic">
@@ -33,7 +33,7 @@ const Footer = () => {
             <h4>Contact</h4>
             <li><i className="fa-solid fa-phone"></i> 9064784593</li>
             <li><i className="fa-solid fa-envelope"></i> sanjoypaul655@gmail.com</li>
-            <li><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239">LinkedIn</a> </li>
+            <li><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239" rel="noreferrer" target='_blank'>LinkedIn</a> </li>
           </ul>
         </div>
         <div className="main-footer-topic">
@@ -53,9 +53,12 @@ const Footer = () => {
       {/* SUB MAIN FOOOTER */}
       <div id='sub-main-footer'>
         <div className='me-4'>
-          <a className='mx-2' href="/"><img src={facebookImg} alt="imgError" /></a>
-          <a className='mx-2' href="/"><img src={linkedinImg} alt="imgError" /></a>
-          <a className='mx-2' href="/"><img src={whatsappImg} alt="imgError" /></a>
+        <img src={facebookImg} alt="imgError" />
+          {/* <a className='mx-2' href="/"><img src={facebookImg} alt="imgError" /></a> */}
+
+          <a className='mx-2' href="https://www.linkedin.com/in/sanjoy-paul-001605239" rel="noreferrer" target='_blank'><img src={linkedinImg} alt="imgError" /></a>
+
+          <a className='mx-2' href="https://wa.me/9064784593" rel="noreferrer" target='_blank'><img src={whatsappImg} alt="imgError" /></a>
         </div>
         <div>
             <p className='mt-3'>© 2024 BanoDigital FullStack Website Builder - All Rights Reserved</p>
@@ -67,13 +70,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-
-// This is Main Footer page <br />
-// attribute<br />
-// flaticon<br />
-// fontawesome<br />
-// w3 school<br />
-// chatGTP 3.5<br />
-// nicepage<br />
-// pixabay
