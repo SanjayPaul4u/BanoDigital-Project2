@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
 import '../style/Signup.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthContext from '../context/auth/authContext'
-
-
 
 
 
 const Signup = () => {
   const [userData, setUserData] = useState({name: "", email: "", password :"", confirmPassword:""});
+   // using "useNavigate"
+   const navigate = useNavigate();
 
   // Using Context
   const auth_context = useContext(AuthContext);
@@ -20,9 +20,15 @@ const Signup = () => {
   }
 
   // Sign up submit Function
-  const signupSubmitFunc = (event) =>{
+  const signupSubmitFunc = async (event) =>{
     event.preventDefault();
-    singUpApiCall(userData);
+    const data = await singUpApiCall(userData);
+    if(data.success){
+      setUserData({email: "", password: ""});
+      navigate("/");
+    }else{
+      console.log("Invalid Creadential");
+    }
   }
   return (
     <div className='container' id='main-signup'>

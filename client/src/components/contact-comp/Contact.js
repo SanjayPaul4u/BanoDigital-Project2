@@ -1,8 +1,42 @@
-import React from 'react'
+import React, { useContext,useEffect,useState } from 'react'
 import "../../style/Contact.css"
+import AuthContext from '../../context/auth/authContext'
 // import ContactImg from '../../images/contact.jpg'
 
+
 const Contact = () => {
+  // using "useContext"📌
+  const auth_context = useContext(AuthContext);
+  const {user} = auth_context;
+  
+  const [contactData, setContactData] = useState({name: "", email:"", mobile: "", message:""})
+
+  // Auto Name and Email Function Create📌
+  const autoNameAndEmail = () =>{
+    if(user.length!==0){
+      setContactData({name: user[0].name, email:user[0].email, mobile: "", message:""})
+    }
+  }
+  // USE EFFECT FUNCTIONI 📌
+  useEffect(() => {
+    autoNameAndEmail();
+    // eslint-disable-next-line
+  }, [])
+  
+
+  //ON CHANGE FUNCTION 📌
+  const onChangeFunc = (event) =>{
+    setContactData({...contactData, [event.target.name]:event.target.value})
+  }
+   
+  // CONTACT SUBMIT FUNCTION 📌
+  const contactSubmitFunc = (event)=>{
+    event.preventDefault();
+    console.log("Contact Submit Clicked!");
+    console.log(contactData);
+  }
+
+  // console.log(user);
   return (
     <div className='container' id='main-contact'>
       <div id='bg-img-div'>
@@ -20,32 +54,30 @@ const Contact = () => {
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam in sit, illo illum doloremque? Ullam ipsam maxime dolores nesciunt.</p>
                       <p>Lorem ipsum dolor sit amet.</p>
                       <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
+                      <p>{user.length!==0&& user[0].email}</p>
                   </div>
                   <div className="col-6 col-md-6 col-xl-6" id='content-div-header-second-row'>
                       <h5>Submit Contact Message</h5>
-                      <form>
+                      <form onSubmit={contactSubmitFunc}>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name"/>
+                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
+                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" onChange={onChangeFunc} name='email' value={contactData.email}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile"/>
+                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile" onChange={onChangeFunc} name='mobile' value={contactData.mobile}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="messageHelp" placeholder="Message"/>
+                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="messageHelp" placeholder="Message" onChange={onChangeFunc} name='message' value={contactData.message}/>
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
 
 
-                        {/* <div id='footer-div'>
-                          <p>Don't have account? <Link to="/signup">SignUp</Link></p>
-                        </div> */}
                     </form>
                   </div>
               </div>

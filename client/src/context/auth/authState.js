@@ -10,15 +10,13 @@ import RemoveCookie from '../../hooks/removeCookie'
 
 const AuthState = (props) => {
     const host = "http://127.0.0.1:5500"
-    // /api/auth/getuser/
-    // Using "useState"
+
     const [user, setUser] = useState([]);
 
     // GET USER API CALL 📌
     const getUserApiCall = async () =>{
         try {
             const token = GetCookie("bdigital-token");
-            console.log(token);
             const response = await axios({
                 method: "get",
                 url:`${host}/api/auth/getuser/${token}`,
@@ -29,7 +27,8 @@ const AuthState = (props) => {
             const data = await response.data;
             // console.log(data);
             setUser([data.user_data])
-
+            
+            return data;
         } catch (error) {
             console.log("getUserApiCall error********");
             console.log(error);
@@ -51,9 +50,12 @@ const AuthState = (props) => {
             // console.log(data);
             SetCookie("bdigital-token", data.token);
             setUser([data.saved_data])
+            return data;
         } catch (error) {
             console.log("singUpApiCall error********");
             console.log(error);
+            
+            return error;
         }
     };
 
@@ -69,12 +71,15 @@ const AuthState = (props) => {
                 }
             })
             const data = await response.data;
-            console.log(data);
+            // console.log(data);
             SetCookie("bdigital-token", data.token);
             setUser([data.user_data])
+            return data;
         } catch (error) {
             console.log("logInApiCall error********");
             console.log(error);
+
+            return error;
         }
     };
 

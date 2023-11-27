@@ -75,7 +75,7 @@ const Navbar = () => {
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
                 </li>
                 
-                {!GetCookie("bdigital-token")?<>
+                {!GetCookie("bdigital-token")&& <>
                 <li className="nav-item">
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/login">LogIn</Link>
                 </li>
@@ -83,13 +83,15 @@ const Navbar = () => {
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/signup">SignUp</Link>
                 </li>
                 </>
-                :
-                <div className="btn btn-danger" onClick={logOutFunc}>LogOut</div>
                 }
             </ul>
           {/* -----------------------------------------------------  📌*/}
               {/* SEARCH ICON 📌*/}
               <h6 className='mx-2'>{user.length===0?"user":user[0].email}</h6>
+              {
+                GetCookie("bdigital-token")&& 
+                <div className="btn btn-danger btn-sm me-2" onClick={logOutFunc}>LogOut</div>
+              }
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>

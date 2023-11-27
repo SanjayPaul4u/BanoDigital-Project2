@@ -1,20 +1,29 @@
 import React, { useContext, useState } from 'react'
 import '../style/Login.css'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import AuthContext from '../context/auth/authContext'
+
 
 
 const Login = () => {
   const [userData, setUserData] = useState({email: "", password: ""});
+  // using "useNavigate"
+  const navigate = useNavigate();
 
   // using "useContext" 📌
   const auth_context = useContext(AuthContext);
   const {logInApiCall} = auth_context;
 
   // LOGIN SUBMIT FUNCTION 📌
-  const loginSubmitFunc = (event) =>{
+  const loginSubmitFunc = async(event) =>{
     event.preventDefault();
-    logInApiCall(userData);
+    const data = await logInApiCall(userData);
+    if(data.success){
+      setUserData({email: "", password: ""});
+      navigate("/");
+    }else{
+      console.log("Invalid Creadential");
+    }
     
   }
   // ON CHANGE FUNCTION
@@ -31,11 +40,11 @@ const Login = () => {
           <form onSubmit={loginSubmitFunc}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' onChange={onChangeFunc} value={userData.email}/>
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' onChange={onChangeFunc} value={userData.email} minLength={2} maxLength={25}/>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1" name='password' onChange={onChangeFunc} value={userData.password}/>
+              <input type="password" className="form-control" id="exampleInputPassword1" name='password' onChange={onChangeFunc} value={userData.password} minLength={2} maxLength={25}/>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
 
