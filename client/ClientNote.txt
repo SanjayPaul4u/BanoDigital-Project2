@@ -71,5 +71,6 @@ FrontEnd: 17. Redux store nad Slice Create 📌
         import {Provider} from "react-redux"
         import store
 
-FrontEnd: 17. SignUp Api Call by Redux Store With "axios"📌
-        - npm i cors
+FrontEnd: 18. delete Redux store WE WIL BE USE 'useCONTEXT'
+
+frontend: 19. Auth Context Create

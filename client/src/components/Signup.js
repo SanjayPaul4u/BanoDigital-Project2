@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../style/Signup.css'
 import { Link } from 'react-router-dom'
+import AuthContext from '../context/auth/authContext'
+
+
 
 
 
 const Signup = () => {
   const [userData, setUserData] = useState({name: "", email: "", password :"", confirmPassword:""});
+
+  // Using Context
+  const auth_context = useContext(AuthContext);
+  const {name} = auth_context;
 
   // onChange FUNCTION
   const onChangeFunc = (event) =>{
@@ -21,7 +28,7 @@ const Signup = () => {
         <div id="sub-signup-div">
           <div id='heading-div'>
             <h3>SignUp</h3>
-            <p>Creat Account</p>
+            <p>Creat Account {name}</p>
           </div>
           <form onSubmit={signupSubmitFunc}>
 
