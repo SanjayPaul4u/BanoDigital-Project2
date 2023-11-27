@@ -1,6 +1,7 @@
 import AuthContext from "./authContext";
 import React, { useState } from "react";
 import axios from 'axios'
+import SetCookie from '../../hooks/setCookie'
 
 
 
@@ -21,6 +22,7 @@ const AuthState = (props) => {
             })
             const data = await response.data;
             // console.log(data);
+            SetCookie("auth-token", data.token);
             setSignUpUser(signUpUser.concat(data))
         } catch (error) {
             console.log("singUpApiCall error********");
