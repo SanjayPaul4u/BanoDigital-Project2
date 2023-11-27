@@ -71,3 +71,5 @@ FrontEnd: 17. Redux store nad Slice Create 📌
         import {Provider} from "react-redux"
         import store
 
+FrontEnd: 17. SignUp Api Call by Redux Store With "axios"📌
+        - npm i cors

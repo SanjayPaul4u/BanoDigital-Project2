@@ -3,6 +3,7 @@ import '../style/Signup.css'
 import { Link } from 'react-router-dom'
 
 
+
 const Signup = () => {
   const [userData, setUserData] = useState({name: "", email: "", password :"", confirmPassword:""});
 
@@ -12,8 +13,8 @@ const Signup = () => {
   }
 
   // Sign up submit Function
-  const signupSubmitFunc = () =>{
-    console.log("submit Clicked");
+  const signupSubmitFunc = (event) =>{
+    event.preventDefault();
   }
   return (
     <div className='container' id='main-signup'>

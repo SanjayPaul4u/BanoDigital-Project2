@@ -2,10 +2,12 @@ const express =  require("express");
 const authRouter = require("./routes/auth-route");
 const reviewRouter = require("./routes/review-route");
 const contactRouter = require("./routes/contact-route");
+const cors = require("cors");
 require("./db/db");
 
 // middle ware
 const app = express();
+app.use(cors())
 
 // define
 const host  = "127.0.0.1";
