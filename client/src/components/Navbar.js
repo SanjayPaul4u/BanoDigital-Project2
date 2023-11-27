@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "../style/Navbar.css"
 import BrandLogo from '../images/connection.png'
 import OfferAlert from './alers-comp/OfferAlert'
 import { Link } from 'react-router-dom'
-
-
+import AuthContext from '../context/auth/authContext'
 
 const Navbar = () => {
   const [IsScroll, setIsScroll] = useState(false);
-
+  // using "useContext"
+  const auth_context = useContext(AuthContext);
+  const {signUpUser} = auth_context;
   
   
   // NAVBAR BACKGROUND COLOR WILL BE CHANGE WHILE SCROLL📌
@@ -25,7 +26,7 @@ const Navbar = () => {
   const funcResponsive = () =>{
     setIsScroll(true)
   }
-  
+  // console.log(signUpUser);
   
   return (
     <>
@@ -74,7 +75,7 @@ const Navbar = () => {
             </ul>
           {/* -----------------------------------------------------  📌*/}
               {/* SEARCH ICON 📌*/}
-              <h6 className='mx-2'>User</h6>
+              <h6 className='mx-2'>{signUpUser.length===0?"user":signUpUser[0].saved_data.email}</h6>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>

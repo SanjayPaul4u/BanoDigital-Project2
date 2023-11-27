@@ -12,7 +12,7 @@ const Signup = () => {
 
   // Using Context
   const auth_context = useContext(AuthContext);
-  const {name} = auth_context;
+  const {singUpApiCall} = auth_context;
 
   // onChange FUNCTION
   const onChangeFunc = (event) =>{
@@ -22,13 +22,14 @@ const Signup = () => {
   // Sign up submit Function
   const signupSubmitFunc = (event) =>{
     event.preventDefault();
+    singUpApiCall(userData);
   }
   return (
     <div className='container' id='main-signup'>
         <div id="sub-signup-div">
           <div id='heading-div'>
             <h3>SignUp</h3>
-            <p>Creat Account {name}</p>
+            <p>Creat Account</p>
           </div>
           <form onSubmit={signupSubmitFunc}>
 
