@@ -1,21 +1,30 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../style/Navbar.css"
 import BrandLogo from '../images/connection.png'
 import OfferAlert from './alers-comp/OfferAlert'
 import { Link } from 'react-router-dom'
 import AuthContext from '../context/auth/authContext'
+import GetCookie from '../hooks/getCookie'
+
 
 const Navbar = () => {
   const [IsScroll, setIsScroll] = useState(false);
-  // using "useContext"
+
+  // using "useContext" 📌
   const auth_context = useContext(AuthContext);
-  const {signUpUser} = auth_context;
+  const {user, getUserApiCall, logOutFunc} = auth_context;
+  
+  // USE EFFECT 📌
+  useEffect(() => {
+    if(GetCookie("bdigital-token")){
+      getUserApiCall();
+    }
+    // eslint-disable-next-line
+  }, [])
   
   
   // NAVBAR BACKGROUND COLOR WILL BE CHANGE WHILE SCROLL📌
   const changeBackgrond = ()=>{
-    // console.log(window.scrollY)
-    // console.log(window.scrollX)
     if(window.scrollY>=40){
       setIsScroll(true);
     }else{
@@ -26,8 +35,8 @@ const Navbar = () => {
   const funcResponsive = () =>{
     setIsScroll(true)
   }
-  // console.log(signUpUser);
-  
+
+  // console.log(user);
   return (
     <>
     <OfferAlert IsScroll={IsScroll}/>
@@ -66,16 +75,21 @@ const Navbar = () => {
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/contact">Contact</Link>
                 </li>
                 
+                {!GetCookie("bdigital-token")?<>
                 <li className="nav-item">
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/login">LogIn</Link>
                 </li>
                 <li className="nav-item">
                 <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/signup">SignUp</Link>
                 </li>
+                </>
+                :
+                <div className="btn btn-danger" onClick={logOutFunc}>LogOut</div>
+                }
             </ul>
           {/* -----------------------------------------------------  📌*/}
               {/* SEARCH ICON 📌*/}
-              <h6 className='mx-2'>{signUpUser.length===0?"user":signUpUser[0].saved_data.email}</h6>
+              <h6 className='mx-2'>{user.length===0?"user":user[0].email}</h6>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>

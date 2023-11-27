@@ -83,7 +83,7 @@ const loginFunc = async(req, res, next) =>{
             return res.status(400).json({success, message:"Token not generated"});
         }
         success = true
-        res.status(201).json({token, success, message:"LoggedIn successfully"})
+        res.status(201).json({token, success, message:"LoggedIn successfully", user_data})
 
     } catch (error) {
         success = false
