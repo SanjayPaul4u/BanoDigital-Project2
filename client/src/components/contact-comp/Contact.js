@@ -8,7 +8,7 @@ import ContactContext from '../../context/contact/contactContext';
 const Contact = () => {
   // using "useContext"📌
   const auth_context = useContext(AuthContext);
-  const {user, Logout_and_vanish_automate} = auth_context;
+  const {user} = auth_context;
   const contact_context = useContext(ContactContext);
   const {contactSubmitApiCall} = contact_context;
   
@@ -49,9 +49,6 @@ const Contact = () => {
   }
 
   // console.log(user);
- 
-
- 
   return (
     <div className='container' id='main-contact'>
       <div id='bg-img-div'>
@@ -65,7 +62,7 @@ const Contact = () => {
           <div id="content-div-header">
               <div className="row">
                   <div className="col-6 col-md-6 col-xl-6" id='content-div-header-first-row'>
-                      <div className="btn btn-sm btn-primary d-none" onClick={vanishAutomate} ref={Logout_and_vanish_automate}>VanishAutomate</div>
+                      <div className="btn btn-sm btn-primary d-none" onClick={vanishAutomate}>VanishAutomate</div>
                       <h2>Contacts</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam in sit, illo illum doloremque? Ullam ipsam maxime dolores nesciunt.</p>
                       <p>Lorem ipsum dolor sit amet.</p>

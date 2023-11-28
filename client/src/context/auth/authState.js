@@ -1,17 +1,21 @@
 import AuthContext from "./authContext";
-import React, { useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from 'axios'
 import SetCookie from '../../hooks/setCookie'
 import GetCookie from '../../hooks/getCookie'
 import RemoveCookie from '../../hooks/removeCookie'
+import AlertContext from "../alert/alertContext";
 
 
 
 
 const AuthState = (props) => {
     const host = "http://127.0.0.1:5500"
-
     const [user, setUser] = useState([]);
+
+    // using "useContext" 📌
+    const alert_context = useContext(AlertContext);
+    const {showAlertFunc} = alert_context;
 
     // GET USER API CALL 📌
     const getUserApiCall = async () =>{
@@ -84,21 +88,22 @@ const AuthState = (props) => {
     };
 
     // LOGOUT FUNCTION 📌
-    const Logout_and_vanish_automate = useRef();
+    const [isLogout, setIsLogout] = useState(false);
 
     const logOutFunc = async()=>{
         try {
+            setIsLogout(true);
             RemoveCookie("bdigital-token");
-            console.log("Log out");
             setUser([]);
-            Logout_and_vanish_automate.current.click();
+            showAlertFunc("success", "LogOut Successfully");
         } catch (error) {
             console.log("logOutFunc error********");
             console.log(error);
+            showAlertFunc("error", "LogOut Error");
         }
     }
 
-    return <AuthContext.Provider value={{singUpApiCall, user, getUserApiCall, logInApiCall, logOutFunc, Logout_and_vanish_automate}}>
+    return <AuthContext.Provider value={{singUpApiCall, user, getUserApiCall, logInApiCall, logOutFunc, isLogout}}>
         {props.children}
     </AuthContext.Provider>
 }

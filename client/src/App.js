@@ -9,9 +9,12 @@ import Signup from './components/Signup'
 import MainReview from './components/review-comp/MainReview'
 import Contact from './components/contact-comp/Contact'
 import Error404Page from './components/Error404Page'
+import MainAlert from './components/alers-comp/MainAlert'
 
 import AuthState from './context/auth/authState'
 import ContactState from './context/contact/contactState'
+import AlertState from './context/alert/alertState'
+
 
 
 
@@ -21,10 +24,12 @@ import ContactState from './context/contact/contactState'
 const App = () => {
   return (
     <>
+      <AlertState>
       <ContactState>
       <AuthState>
         <BrowserRouter>
           <Navbar/>
+          <MainAlert/>
             <Routes>
               <Route exact path='/' element={<Home/>}/>
               <Route exact path='/home' element={<Home/>}/>
@@ -38,6 +43,7 @@ const App = () => {
         </BrowserRouter>
       </AuthState>
       </ContactState>
+      </AlertState>
     </>
   )
 }

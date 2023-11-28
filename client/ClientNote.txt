@@ -84,3 +84,5 @@ frontend: 22. Api Call - Get User, Login, signUp function
 frontend: 23. Automate Name and Email in Contact page
 
 frontend: 24. Api Call Done - Contact Submit
+
+frontend: 25. Created Alert Functionality
