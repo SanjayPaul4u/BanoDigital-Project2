@@ -7,7 +7,7 @@ const submitConMsgFunc = async(req, res, next) =>{
     const result = validationResult(req);
     if (!result.isEmpty()) {
         success = false
-        return res.json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
+        return res.status(400).json({success, message: `${result.array()[0].msg}`, errors: result.array() });
     }
 
     try {

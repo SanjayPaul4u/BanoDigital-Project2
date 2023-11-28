@@ -11,7 +11,7 @@ const AlertState = (props) => {
         })
         setTimeout(() => {
             setAlert(null);
-        }, 3000);
+        }, 4000);
     
     }
 

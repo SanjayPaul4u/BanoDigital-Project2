@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ContactContext from './contactContext';
 import axios from 'axios';
 import GetCookie from '../../hooks/getCookie';
+import AlertContext from "../alert/alertContext";
 
 const ContactState = (props) =>{  
-    const host = "http://127.0.0.1:5500"  
-
+    const host = "http://127.0.0.1:5500" 
+    // using "useContext" 
+    const alert_context = useContext(AlertContext);
+    const { showAlertFunc } = alert_context;
 
     // CONTACT SUBMIT API CALL 📌
     const contactSubmitApiCall = async(contactData)=>{
@@ -22,11 +25,17 @@ const ContactState = (props) =>{
             })
             const data = await response.data;
             // console.log(data);
+            showAlertFunc("success", `Contact Message Submmited Successfully`);
             return data;
         } catch (error) {
             console.log("contactSubmitApiCall error***");
             console.log(error);
 
+            if(error.response.data.message){
+                showAlertFunc("error", `${error.response.data.message}`);
+            }else{
+                showAlertFunc("error", `Can not Submit Contact Message due to some Reason`);
+            }
             return error;
         }
     }

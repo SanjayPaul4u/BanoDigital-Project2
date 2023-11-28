@@ -53,12 +53,18 @@ const AuthState = (props) => {
             const data = await response.data;
             // console.log(data);
             SetCookie("bdigital-token", data.token);
-            setUser([data.saved_data])
+            setUser([data.saved_data]);
+            showAlertFunc("success", "Account Created Successfully");
             return data;
         } catch (error) {
             console.log("singUpApiCall error********");
             console.log(error);
             
+            if(error.response.data.message){
+                showAlertFunc("error", `${error.response.data.message}`);
+            }else{
+                showAlertFunc("error", `Can not Create Acount due to some Reason`);
+            }
             return error;
         }
     };
@@ -78,11 +84,17 @@ const AuthState = (props) => {
             // console.log(data);
             SetCookie("bdigital-token", data.token);
             setUser([data.user_data])
+            showAlertFunc("success", "LogedIn Successfully");
             return data;
         } catch (error) {
             console.log("logInApiCall error********");
             console.log(error);
 
+            if(error.response.data.message){
+                showAlertFunc("error", `${error.response.data.message}`);
+            }else{
+                showAlertFunc("error", `LogIn Fail`);
+            }
             return error;
         }
     };
@@ -95,11 +107,11 @@ const AuthState = (props) => {
             setIsLogout(true);
             RemoveCookie("bdigital-token");
             setUser([]);
-            showAlertFunc("success", "LogOut Successfully");
+            showAlertFunc("success", "LogedOut Successfully");
         } catch (error) {
             console.log("logOutFunc error********");
             console.log(error);
-            showAlertFunc("error", "LogOut Error");
+            showAlertFunc("error", "LogedOut Error");
         }
     }
 

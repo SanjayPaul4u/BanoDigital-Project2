@@ -73,7 +73,7 @@ const Contact = () => {
                       <form onSubmit={contactSubmitFunc}>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name}/>
+                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name} minLength={3} maxLength={25}/>
                         </div>
 
                         <div className="mb-3">
@@ -85,8 +85,10 @@ const Contact = () => {
                         </div>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg}/>
+                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg} minLength={5} maxLength={25}/>
                         </div>
+
+                        {/* submit button */}
                         <button type="submit" className="btn btn-primary">Submit</button>
 
 

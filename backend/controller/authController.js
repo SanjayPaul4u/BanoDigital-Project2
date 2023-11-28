@@ -66,13 +66,13 @@ const loginFunc = async(req, res, next) =>{
         // email check📌
         if(!user_data){
             success = false
-            return res.status(400).json({success, message:"Invalid CreadentialsE"})
+            return res.status(400).json({success, message:"Invalid Creadentialse"})
         }
         // password check📌
         const isPassword = await bcrypt.compare(password, user_data.password);
         if(!isPassword){
             success = false
-            return res.status(400).json({success, message:"Invalid CreadentialsP"})
+            return res.status(400).json({success, message:"Invalid Creadentialsp"})
         }
 
         // final login code📌
