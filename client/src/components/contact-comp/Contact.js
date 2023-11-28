@@ -1,42 +1,57 @@
 import React, { useContext,useEffect,useState } from 'react'
 import "../../style/Contact.css"
 import AuthContext from '../../context/auth/authContext'
+import ContactContext from '../../context/contact/contactContext';
 // import ContactImg from '../../images/contact.jpg'
 
 
 const Contact = () => {
   // using "useContext"📌
   const auth_context = useContext(AuthContext);
-  const {user} = auth_context;
+  const {user, Logout_and_vanish_automate} = auth_context;
+  const contact_context = useContext(ContactContext);
+  const {contactSubmitApiCall} = contact_context;
   
-  const [contactData, setContactData] = useState({name: "", email:"", mobile: "", message:""})
+  const [contactData, setContactData] = useState({name: "", email:"", mobile: "", contactMsg:""})
+  
 
   // Auto Name and Email Function Create📌
   const autoNameAndEmail = () =>{
     if(user.length!==0){
-      setContactData({name: user[0].name, email:user[0].email, mobile: "", message:""})
+      setContactData({name: user[0].name, email:user[0].email, mobile: "", contactMsg:""})
     }
   }
+   // VANISH NAME AND EMAIL AUTOMATE AFTER LOF OUT 📌
+   const vanishAutomate = () =>{
+    setContactData({name: "", email:"", mobile: "", contactMsg:""})
+   }
   // USE EFFECT FUNCTIONI 📌
   useEffect(() => {
     autoNameAndEmail();
     // eslint-disable-next-line
   }, [])
   
-
+ 
   //ON CHANGE FUNCTION 📌
   const onChangeFunc = (event) =>{
     setContactData({...contactData, [event.target.name]:event.target.value})
   }
    
   // CONTACT SUBMIT FUNCTION 📌
-  const contactSubmitFunc = (event)=>{
+  const contactSubmitFunc = async(event)=>{
     event.preventDefault();
-    console.log("Contact Submit Clicked!");
-    console.log(contactData);
+    const data = await contactSubmitApiCall(contactData);
+    if(data.success){
+      setContactData({name: "", email:"", mobile: "", contactMsg:""})
+    }else{
+      console.log("In valid Contact Detail");
+    }
   }
 
   // console.log(user);
+ 
+
+ 
   return (
     <div className='container' id='main-contact'>
       <div id='bg-img-div'>
@@ -50,11 +65,11 @@ const Contact = () => {
           <div id="content-div-header">
               <div className="row">
                   <div className="col-6 col-md-6 col-xl-6" id='content-div-header-first-row'>
+                      <div className="btn btn-sm btn-primary d-none" onClick={vanishAutomate} ref={Logout_and_vanish_automate}>VanishAutomate</div>
                       <h2>Contacts</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam in sit, illo illum doloremque? Ullam ipsam maxime dolores nesciunt.</p>
                       <p>Lorem ipsum dolor sit amet.</p>
                       <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
-                      <p>{user.length!==0&& user[0].email}</p>
                   </div>
                   <div className="col-6 col-md-6 col-xl-6" id='content-div-header-second-row'>
                       <h5>Submit Contact Message</h5>
@@ -73,7 +88,7 @@ const Contact = () => {
                         </div>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="messageHelp" placeholder="Message" onChange={onChangeFunc} name='message' value={contactData.message}/>
+                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg}/>
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
 

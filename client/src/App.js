@@ -11,6 +11,8 @@ import Contact from './components/contact-comp/Contact'
 import Error404Page from './components/Error404Page'
 
 import AuthState from './context/auth/authState'
+import ContactState from './context/contact/contactState'
+
 
 
 
@@ -19,6 +21,7 @@ import AuthState from './context/auth/authState'
 const App = () => {
   return (
     <>
+      <ContactState>
       <AuthState>
         <BrowserRouter>
           <Navbar/>
@@ -34,6 +37,7 @@ const App = () => {
           <Footer/>
         </BrowserRouter>
       </AuthState>
+      </ContactState>
     </>
   )
 }

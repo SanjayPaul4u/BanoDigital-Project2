@@ -1,5 +1,5 @@
 import AuthContext from "./authContext";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from 'axios'
 import SetCookie from '../../hooks/setCookie'
 import GetCookie from '../../hooks/getCookie'
@@ -84,18 +84,21 @@ const AuthState = (props) => {
     };
 
     // LOGOUT FUNCTION 📌
+    const Logout_and_vanish_automate = useRef();
+
     const logOutFunc = async()=>{
         try {
             RemoveCookie("bdigital-token");
             console.log("Log out");
             setUser([]);
+            Logout_and_vanish_automate.current.click();
         } catch (error) {
             console.log("logOutFunc error********");
             console.log(error);
         }
     }
 
-    return <AuthContext.Provider value={{singUpApiCall, user, getUserApiCall, logInApiCall, logOutFunc}}>
+    return <AuthContext.Provider value={{singUpApiCall, user, getUserApiCall, logInApiCall, logOutFunc, Logout_and_vanish_automate}}>
         {props.children}
     </AuthContext.Provider>
 }
