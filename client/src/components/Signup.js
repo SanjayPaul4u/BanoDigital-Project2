@@ -24,7 +24,7 @@ const Signup = () => {
     event.preventDefault();
     const data = await singUpApiCall(userData);
     if(data.success){
-      setUserData({email: "", password: ""});
+      setUserData({name: "", email: "", password :"", confirmPassword:""});
       navigate("/");
     }else{
       console.log("Invalid Creadential");
@@ -59,7 +59,9 @@ const Signup = () => {
               <input type="password" className="form-control" id="exampleInputConfirmPassword1" name='confirmPassword' onChange={onChangeFunc} value={userData.confirmPassword}  minLength={3} maxLength={20}/>
             </div>
 
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button disabled={
+              userData.name !== "" && userData.email !== "" && userData.password !== "" && userData.confirmPassword !== ""?false: true
+              } type="submit" className="btn btn-primary">Submit</button>
 
             <div id='footer-div'>
               <p>Have you already account? <Link to="/login">LogIn</Link></p>

@@ -2,10 +2,14 @@ import React, { useContext,useEffect,useState } from 'react'
 import "../../style/Contact.css"
 import AuthContext from '../../context/auth/authContext'
 import ContactContext from '../../context/contact/contactContext';
+import GetCookie from '../../hooks/getCookie';
 // import ContactImg from '../../images/contact.jpg'
+import {useNavigate} from 'react-router-dom'
 
+const Contact = () => { 
+  // using "useNavigate"📌
+  const navigate = useNavigate();
 
-const Contact = () => {
   // using "useContext"📌
   const auth_context = useContext(AuthContext);
   const {user} = auth_context;
@@ -21,10 +25,7 @@ const Contact = () => {
       setContactData({name: user[0].name, email:user[0].email, mobile: "", contactMsg:""})
     }
   }
-   // VANISH NAME AND EMAIL AUTOMATE AFTER LOF OUT 📌
-   const vanishAutomate = () =>{
-    setContactData({name: "", email:"", mobile: "", contactMsg:""})
-   }
+ 
   // USE EFFECT FUNCTIONI 📌
   useEffect(() => {
     autoNameAndEmail();
@@ -48,6 +49,12 @@ const Contact = () => {
     }
   }
 
+  // IF CLICK FORM WITHOUT LOGIN THEN REDIRECT LOGIN PAGE📌
+  const FormInputClickFunc = ()=>{
+    if(!GetCookie("bdigital-token")){
+      navigate("/login");
+    }
+  }
   // console.log(user);
   return (
     <div className='container' id='main-contact'>
@@ -62,7 +69,6 @@ const Contact = () => {
           <div id="content-div-header">
               <div className="row">
                   <div className="col-6 col-md-6 col-xl-6" id='content-div-header-first-row'>
-                      <div className="btn btn-sm btn-primary d-none" onClick={vanishAutomate}>VanishAutomate</div>
                       <h2>Contacts</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam in sit, illo illum doloremque? Ullam ipsam maxime dolores nesciunt.</p>
                       <p>Lorem ipsum dolor sit amet.</p>
@@ -73,23 +79,23 @@ const Contact = () => {
                       <form onSubmit={contactSubmitFunc}>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name} minLength={3} maxLength={25}/>
+                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name} minLength={3} maxLength={25} onClick={FormInputClickFunc}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" onChange={onChangeFunc} name='email' value={contactData.email}/>
+                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" onChange={onChangeFunc} name='email' value={contactData.email} onClick={FormInputClickFunc}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile" onChange={onChangeFunc} name='mobile' value={contactData.mobile}/>
+                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile" onChange={onChangeFunc} name='mobile' value={contactData.mobile} onClick={FormInputClickFunc}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg} minLength={5} maxLength={25}/>
+                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg} minLength={5} maxLength={200} onClick={FormInputClickFunc}/>
                         </div>
 
                         {/* submit button */}
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button disabled={contactData.name!=="" && contactData.email!=="" && contactData.mobile!=="" && contactData.contactMsg!==""?false:true} type="submit" className="btn btn-primary">Submit</button>
 
 
                     </form>

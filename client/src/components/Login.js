@@ -46,7 +46,10 @@ const Login = () => {
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
               <input type="password" className="form-control" id="exampleInputPassword1" name='password' onChange={onChangeFunc} value={userData.password} minLength={2} maxLength={25}/>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button disabled={
+              userData.email!=="" && 
+              userData.password!==""?false: true
+            } type="submit" className="btn btn-primary">Submit</button>
 
             <div id='footer-div'>
               <p>Don't have account? <Link to="/signup">SignUp</Link></p>
