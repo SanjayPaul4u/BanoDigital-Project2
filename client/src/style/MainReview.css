@@ -101,6 +101,16 @@
     font-size: 2rem;
     cursor: pointer;    
 }
+#addReview-Row #add-review-div #err-showing-p{
+    color: #bb1111;
+    font-weight: 500;
+    margin-top: -1.2rem; 
+}
+#addReview-Row #add-review-div .clickRatingStar{
+    font-size: 2rem;
+    color: #fbb736;
+    cursor: pointer;    
+}
 #addReview-Row #add-review-div textarea{
     background-color: #8f8f8f;
     border-radius: 0rem;
@@ -120,7 +130,7 @@
     border: none;
     background-color: #00000047;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
 }
 #addReview-Row #add-review-div .btn:hover{
     background-color: #fff;

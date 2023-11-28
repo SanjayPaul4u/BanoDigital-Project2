@@ -86,3 +86,7 @@ frontend: 23. Automate Name and Email in Contact page
 frontend: 24. Api Call Done - Contact Submit
 
 frontend: 25. Created Alert Functionality
+
+frontend: 26. Created Alert Functionality Refactoring
+
+frontend: 27. Api Call Done - Rating and Review Submit

@@ -8,7 +8,7 @@ const addReviewFunc = async(req, res, next)=>{
         const result = validationResult(req);
         if (!result.isEmpty()) {
             success = false
-            return res.json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
+            return res.status(400).json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
         }
 
 
@@ -20,7 +20,7 @@ const addReviewFunc = async(req, res, next)=>{
         const isReviewd = await Reviews.findOne({user:req.user._id});
         if(isReviewd){
             success = false;
-            return res.status(400).json({success, message: "Review already Added. Now you can Edit it"})
+            return res.status(400).json({success, message: "Review already Added. Now you can Edit it or Delete"})
         }
 
         
@@ -32,8 +32,9 @@ const addReviewFunc = async(req, res, next)=>{
         })
 
         // save review date in database📌
-        const saved_review_data = await review_data.save();
+        const saved_review_data = await review_data.save(); 
 
+        success = true;
         res.status(201).json({success, message: "Added review successfully", saved_review_data});
     } catch (error) {
         success = false;
@@ -88,7 +89,7 @@ const updateReviewByIdFunc = async (req, res, next) =>{
         const result = validationResult(req);
         if (!result.isEmpty()) {
             success = false
-            return res.json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
+            return res.status(400).json({success, message: `Invalid Credentials - ${result.array()[0].msg}`, errors: result.array() });
         }
     try {
         let success = false;

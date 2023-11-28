@@ -35,7 +35,11 @@ const Contact = () => {
  
   //ON CHANGE FUNCTION 📌
   const onChangeFunc = (event) =>{
-    setContactData({...contactData, [event.target.name]:event.target.value})
+    if(!GetCookie("bdigital-token")){
+      navigate("/login");
+    }else{
+      setContactData({...contactData, [event.target.name]:event.target.value});
+    }
   }
    
   // CONTACT SUBMIT FUNCTION 📌
@@ -46,13 +50,6 @@ const Contact = () => {
       setContactData({name: "", email:"", mobile: "", contactMsg:""})
     }else{
       console.log("In valid Contact Detail");
-    }
-  }
-
-  // IF CLICK FORM WITHOUT LOGIN THEN REDIRECT LOGIN PAGE📌
-  const FormInputClickFunc = ()=>{
-    if(!GetCookie("bdigital-token")){
-      navigate("/login");
     }
   }
   // console.log(user);
@@ -79,19 +76,19 @@ const Contact = () => {
                       <form onSubmit={contactSubmitFunc}>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name} minLength={3} maxLength={25} onClick={FormInputClickFunc}/>
+                          <input type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Your Name" onChange={onChangeFunc} name='name' value={contactData.name} minLength={3} maxLength={25}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" onChange={onChangeFunc} name='email' value={contactData.email} onClick={FormInputClickFunc}/>
+                          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" onChange={onChangeFunc} name='email' value={contactData.email}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile" onChange={onChangeFunc} name='mobile' value={contactData.mobile} onClick={FormInputClickFunc}/>
+                          <input type="number" className="form-control" id="exampleInputMobile1" aria-describedby="mobileHelp" placeholder="Mobile" onChange={onChangeFunc} name='mobile' value={contactData.mobile}/>
                         </div>
 
                         <div className="mb-3">
-                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg} minLength={5} maxLength={200} onClick={FormInputClickFunc}/>
+                          <input type="text" className="form-control" id="exampleInputMessage1" aria-describedby="contactMsgHelp" placeholder="Message" onChange={onChangeFunc} name='contactMsg' value={contactData.contactMsg} minLength={5} maxLength={200}/>
                         </div>
 
                         {/* submit button */}

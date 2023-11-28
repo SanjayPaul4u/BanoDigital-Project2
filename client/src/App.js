@@ -14,6 +14,8 @@ import MainAlert from './components/alers-comp/MainAlert'
 import AuthState from './context/auth/authState'
 import ContactState from './context/contact/contactState'
 import AlertState from './context/alert/alertState'
+import ReviewState from './context/review/reviewState'
+
 
 
 
@@ -25,6 +27,7 @@ const App = () => {
   return (
     <>
       <AlertState>
+      <ReviewState>
       <ContactState>
       <AuthState>
         <BrowserRouter>
@@ -43,6 +46,7 @@ const App = () => {
         </BrowserRouter>
       </AuthState>
       </ContactState>
+      </ReviewState>
       </AlertState>
     </>
   )
