@@ -92,6 +92,37 @@ const ReviewState = (props)=>{
     }
 
     
+    // Edit REVIEW 📌 
+    const editReviewApicall = async(reviewData, id) =>{
+        try {
+            const token = GetCookie("bdigital-token");
+            const response = await axios({
+                method:"patch",
+                url: `${host}/api/review/updatereview/${id}/${token}`,
+                data: JSON.stringify(reviewData),
+                headers: {
+                    "Content-Type": "application/json" //important
+                }
+            })
+            const data = await response.data;
+            console.log(data);
+            showAlertFunc("success", "Edited Rating & Review Successfully");
+            getAllReviewApicall();
+            setUserReview([data.updated_review_data]);
+            return data;
+        } catch (error) {
+            console.log("editReviewApicall Error*****");
+            console.log(error);
+
+
+            if(error.response.data.message){
+                showAlertFunc("error", `${error.response.data.message}`);
+            }else{
+                showAlertFunc("error", `Can't Add Review due to some Reason`);
+            }
+            return error
+        }
+    }
 
     // GET All REVIEW -without token📌
     const delteReviewApicall = async(id) =>{
@@ -124,7 +155,7 @@ const ReviewState = (props)=>{
         setIsUserWantDelete(true);
     }
 
-    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, getAllReviewApicall, delteReviewApicall, allReview, capitalizedWord, isUserWantDelete, setIsUserWantDelete, onclickDeleteIconFunc}}>
+    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, getAllReviewApicall, delteReviewApicall, editReviewApicall, allReview, capitalizedWord, isUserWantDelete, setIsUserWantDelete, onclickDeleteIconFunc}}>
         {props.children}
     </ReviewContext.Provider>
 }
