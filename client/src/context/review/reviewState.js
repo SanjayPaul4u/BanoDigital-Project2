@@ -10,6 +10,8 @@ const ReviewState = (props)=>{
 
     const [userReview, setUserReview] = useState(null);
     const [allReview, setAllReview] = useState(null);
+    const [isUserWantDelete, setIsUserWantDelete] = useState(false);
+
 
     // using "useContext" 📌 
     const alert_context = useContext(AlertContext);
@@ -89,14 +91,40 @@ const ReviewState = (props)=>{
         }
     }
 
+    
+
+    // GET All REVIEW -without token📌
+    const delteReviewApicall = async(id) =>{
+        try {
+            const token = GetCookie("bdigital-token");
+            const response = await axios({
+                method:"delete",
+                url: `${host}/api/review/deletereview/${id}/${token}`
+            })
+            await response.data;
+            // console.log(data);
+            getAllReviewApicall();
+            setUserReview(null);
+            showAlertFunc("success", "Your Rating & Review Deleted Successfully");
+        } catch (error) {
+            console.log("delteReviewApicall Error*****");
+            console.log(error);
+        }
+    }
+
     // CAPITALIZED WORD FUNCTION 📌
-  const capitalizedWord = (word) =>{
-    const lowerCaseWord = word.toLowerCase();
-    const uppperCaseWord = word.toUpperCase();
-    const capitalizedWord = uppperCaseWord.charAt(0)+lowerCaseWord.slice(1);
-    return capitalizedWord;
-  }
-    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, getAllReviewApicall, allReview, capitalizedWord}}>
+    const capitalizedWord = (word) =>{
+        const lowerCaseWord = word.toLowerCase();
+        const uppperCaseWord = word.toUpperCase();
+        const capitalizedWord = uppperCaseWord.charAt(0)+lowerCaseWord.slice(1);
+        return capitalizedWord;
+    }
+    // CLICK DELETE ICON
+    const onclickDeleteIconFunc = ()=>{
+        setIsUserWantDelete(true);
+    }
+
+    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, getAllReviewApicall, delteReviewApicall, allReview, capitalizedWord, isUserWantDelete, setIsUserWantDelete, onclickDeleteIconFunc}}>
         {props.children}
     </ReviewContext.Provider>
 }

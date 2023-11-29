@@ -25,7 +25,7 @@ router.patch("/updatereview/:id/:token",[
     body("reviewMsg", "Maximum Length of Review Message must be 150").isLength({max: 200})
 ], fetchUser, updateReviewByIdFunc);
 
-// ROUTE 5: deleteReviewByIdFunc : DELETE - /api/review/deletereview
+// ROUTE 5: deleteReviewByIdFunc : DELETE - /api/review/deletereview/:token
 router.delete("/deletereview/:id/:token", fetchUser, deleteReviewByIdFunc);
 
 // export auth route

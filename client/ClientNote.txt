@@ -92,3 +92,5 @@ frontend: 26. Created Alert Functionality Refactoring
 frontend: 27. Api Call Done - Rating and Review Submitg
 
 frontend: 28. Api Call Done - Get User Rating and Review, Get All Rating and Review
+
+frontend: 28. Api Call Done - Delete User Rating and Review
