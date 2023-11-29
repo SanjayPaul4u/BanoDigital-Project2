@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     }
-})
+}, {timestamps: true})
 // token generate📌
 userSchema.methods.createToken = async function (){
     try {

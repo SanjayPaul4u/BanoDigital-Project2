@@ -1,97 +1,47 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import ReviewContext from '../../context/review/reviewContext';
+
 
 const DisplayReview = () => {
+  // using "useCotext" 📌
+  const review_context = useContext(ReviewContext);
+  const {getAllReviewApicall, allReview, capitalizedWord} = review_context;
+
+   // USE EFFECT 📌
+   useEffect(() => {
+      getAllReviewApicall();
+    // eslint-disable-next-line
+  }, [])
+
+  
+
+  // console.log(allReview);
   return (
     <div>
-
       {/* DISPLAYING REVIEW BY ROW */}
-      <div className="row">
-        <div className="col-12 col-md-12 col-xl-12">
-        <div className='display-review-card'>
-              <div>
-                  <div className='dp'>S</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                  </div>
-              </div>
-              <div className='sub-display-review-card'>
-                <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
-                <h6>- Suma</h6>
-              </div>
-            </div>
+      {allReview && <div className="row">
+        {allReview.map((element)=>{
+          return <div key={element._id} className="col-12 col-md-12 col-xl-12">
           <div className='display-review-card'>
-              <div>
-                  <div className='dp'>K</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </div>
+                <div>
+                    <div className='dp'>{element.name.charAt(0).toUpperCase()}</div>
+                    <div className='review-star'>
+                      <i className={`${element.starCount>=1?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${element.starCount>=2?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${element.starCount>=3?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${element.starCount>=4?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${element.starCount>=5?"fa-solid":"fa-regular"} fa-star`}></i>
+                    </div>
+                </div>
+                <div className='sub-display-review-card'>
+                  <p>{element.reviewMsg}</p>
+                  <h6>- {capitalizedWord(element.name)}</h6>
+                </div>
               </div>
-              <div className='sub-display-review-card'>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quae obcaecati nobis soluta sed deleniti dolores vel doloribus quibusdam quas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, dolorum iusto non magnam debitis omnis ab maxime sequi necessitatibus expedita perspiciatis consequatur facilis excepturi vitae cum temporibus, ut ducimus nostrum!</p>
-                <h6>- Kovita</h6>
-              </div>
-            </div>
-
-            <div className='display-review-card'>
-              <div>
-                  <div className='dp'>S</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                  </div>
-              </div>
-              <div className='sub-display-review-card'>
-                <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
-                <h6>- Suma</h6>
-              </div>
-            </div>
-
-            <div className='display-review-card'>
-              <div>
-                  <div className='dp'>S</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                  </div>
-              </div>
-              <div className='sub-display-review-card'>
-                <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
-                <h6>- Suma</h6>
-              </div>
-            </div>
-
-            <div className='display-review-card'>
-              <div>
-                  <div className='dp'>S</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                  </div>
-              </div>
-              <div className='sub-display-review-card'>
-                <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
-                <h6>- Suma</h6>
-              </div>
-            </div>
-        </div>
-      </div>
+          </div>
+        })}
+        
+      </div>}
           
     </div>
   )

@@ -5,6 +5,7 @@ import SetCookie from '../../hooks/setCookie'
 import GetCookie from '../../hooks/getCookie'
 import RemoveCookie from '../../hooks/removeCookie'
 import AlertContext from "../alert/alertContext";
+import ReviewContext from "../review/reviewContext";
 
 
 
@@ -16,6 +17,8 @@ const AuthState = (props) => {
     // using "useContext" 📌
     const alert_context = useContext(AlertContext);
     const {showAlertFunc} = alert_context;
+    const review_context = useContext(ReviewContext);
+    const {setUserReview} = review_context;
 
     // GET USER API CALL 📌
     const getUserApiCall = async () =>{
@@ -29,7 +32,7 @@ const AuthState = (props) => {
                 }
             })
             const data = await response.data;
-            // console.log(data);
+            // console.log(data.user_data);
             setUser([data.user_data])
             
             return data;
@@ -107,6 +110,7 @@ const AuthState = (props) => {
             setIsLogout(true);
             RemoveCookie("bdigital-token");
             setUser([]);
+            setUserReview(null);
             showAlertFunc("success", "LogedOut Successfully");
         } catch (error) {
             console.log("logOutFunc error********");

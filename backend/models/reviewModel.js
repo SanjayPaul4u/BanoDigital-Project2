@@ -5,6 +5,10 @@ const reviewSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "user"
     },
+    name:{
+        type: String,
+        require: true,
+    },
     starCount:{
         type: Number,
         require: true,
@@ -15,7 +19,7 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         require: true
     }
-})
+}, {timestamps: true})
 
 const Reviews = new mongoose.model("review", reviewSchema);
 

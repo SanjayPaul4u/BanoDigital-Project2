@@ -22,7 +22,7 @@ const contactSchema = new mongoose.Schema({
         type: String,
         require: true
     }
-})
+}, {timestamps: true})
 
 const Contacts = new mongoose.model("contact", contactSchema);
 

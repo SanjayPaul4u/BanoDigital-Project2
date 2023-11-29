@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import getCookie from '../../hooks/getCookie'
 import { useNavigate } from 'react-router-dom';
 import ReviewContext from '../../context/review/reviewContext';
+import UserReview from './UserReview';
+
 
 const AddReview = () => {
   const [reviewDetail, setReviewDetail] = useState({starCount:0, reviewMsg:""});
@@ -21,7 +23,7 @@ const AddReview = () => {
     }
   }
 
-  // ON CHANGE FUNCTION
+  // ON CHANGE FUNCTION 📌
   const onChangeFunc = (event) =>{
     if(getCookie("bdigital-token")){
       setReviewDetail({starCount:reviewDetail.starCount, reviewMsg:event.target.value});
@@ -31,7 +33,7 @@ const AddReview = () => {
   }
 
 
-  // REVIEW SUBMIT FUNCTION
+  // REVIEW SUBMIT FUNCTION📌
   const reviewSubmitFunc = async(event) =>{
     event.preventDefault();
     const data = await addReviewApicall(reviewDetail);
@@ -39,8 +41,8 @@ const AddReview = () => {
       setReviewDetail({starCount:0, reviewMsg: ""});
     }
     
-  }
-  // console.log(reviewDetail);
+  }  
+  
   return (
     <div>
           {/* REVIEW PAGE HEADING */}
@@ -102,27 +104,9 @@ const AddReview = () => {
             </form>
           </div>
 
-          {/* USER REVIEW */}
-          <div id="user-review-div">
-            <div className='d-flex justify-content-between'>
-              <h5>Your Review</h5>
-              <div style={{color:"white"}}>
-                <i className="fa-solid fa-pen-to-square mx-2"></i>
-                <i className="fa-solid fa-trash-can mx-2"></i>
-              </div> 
-            </div>
 
-            <div id="rated-stars">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-            </div>
-                           
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa placeat consequuntur rerum suscipit aliquid a aspernatur tempore quisquam, quis ducimus atque ipsum, perspiciatis, optio beatae?</p>
-            <h6> -You</h6>
-          </div>
+          {/* USER REVIEW */}
+          <UserReview/>
     </div>
   )
 }

@@ -20,7 +20,7 @@ const Login = () => {
     const data = await logInApiCall(userData);
     if(data.success){
       setUserData({email: "", password: ""});
-      navigate("/");
+      navigate(-1);
     }else{
       console.log("Invalid Creadential");
     }

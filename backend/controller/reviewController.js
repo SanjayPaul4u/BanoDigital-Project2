@@ -27,6 +27,7 @@ const addReviewFunc = async(req, res, next)=>{
         // Set schema's value📌
         const review_data = await Reviews({
             user:req.user._id,// getting from fetch user
+            name:req.user.name,
             reviewMsg:reviewMsg,
             starCount:starCount
         })
@@ -69,7 +70,7 @@ const getReviewFunc = async (req, res, next) =>{
 const getAllReviewFunc = async (req, res, next) =>{
     try {
         let success = false;
-        const review_data = await Reviews.find();
+        const review_data = await Reviews.find().sort({createdAt: -1});
         
         success = true;
         res.status(200).json({success, message: "Got All User Review successfully", review_data});

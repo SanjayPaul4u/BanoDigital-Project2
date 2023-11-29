@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import "../../style/Review.css"
 import WebDesignPng from '../../images/wev-design.png'
 import {Link} from 'react-router-dom'
+import ReviewContext from '../../context/review/reviewContext'
+
 
 const Review = () => {
+  // using "useContext" 📌
+  const review_context = useContext(ReviewContext);
+  const {getAllReviewApicall, allReview, capitalizedWord} = review_context;
+
+   // USE EFFECT 📌
+   useEffect(() => {
+    getAllReviewApicall();
+  // eslint-disable-next-line
+}, [])
   return (
     <div id='main-review'>
       <div className="row">
@@ -28,39 +39,30 @@ const Review = () => {
           {/* REVIEW DIV */}
           <div id='reviews-div'>
 
-            <div className='review-card' id="review-card-1">
-              <div>
-                  <div className='dp'>D</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </div>
+            {allReview && allReview.map((e, index)=>{
+              if(index<2){
+                return <div key={e._id} className='review-card' id="review-card-1">
+                <div>
+                    <div className='dp'>{e.name.charAt(0).toUpperCase()}</div>
+                    <div className='review-star'>
+                      <i className={`${e.starCount>=1?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${e.starCount>=2?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${e.starCount>=3?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${e.starCount>=4?"fa-solid":"fa-regular"} fa-star`}></i>
+                      <i className={`${e.starCount>=5?"fa-solid":"fa-regular"} fa-star`}></i>
+                    </div>
+                </div>
+                <div className='sub-review-card'>
+                    <p> {e.reviewMsg}</p>
+                    <h6>- {capitalizedWord(e.name)}</h6>
+                </div>
               </div>
-              <div className='sub-review-card'>
-                  <p>Exceptional service! Their team delivers top-notch websites with creativity and precision. Timely, reliable, and a pleasure to work with</p>
-                  <h6>- Dipanjan</h6>
-              </div>
-            </div>
-
-            <div className='review-card' id="review-card-2">
-              <div>
-                  <div className='dp'>S</div>
-                  <div className='review-star'>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                    <i className="fa-regular fa-star"></i>
-                  </div>
-              </div>
-              <div className='sub-review-card'>
-                <p>Reliable full-stack expertise! Crafted our website seamlessly, from captivating front-end design to robust back-end functionality. Exceptional service, highly recommended!</p>
-                <h6>- Suma</h6>
-              </div>
-            </div>
+              }else{
+                return "";
+              }
+              
+            })
+            }
 
             <div className=''>
               <Link className='btn btn-sm btn-primary' to="/mainreview">Rate Us</Link>
