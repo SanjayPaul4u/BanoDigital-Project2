@@ -5,3 +5,10 @@
     padding-top: 10rem;
     
 }
+
+@media only screen and (max-width: 574px) {
+    #main-home{
+        padding: 0rem 1rem;
+        padding-top: 7rem; 
+    }
+}

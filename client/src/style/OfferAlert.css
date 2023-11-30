@@ -1,8 +1,9 @@
 #main-offerAlert{
+    height: 3.6rem;
 }
 @media only screen and (max-width: 767px){
     #main-offerAlert{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding-left: 0;
         padding-right: 0;
         /* padding: 0; */

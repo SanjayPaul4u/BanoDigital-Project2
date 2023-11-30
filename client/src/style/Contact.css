@@ -5,14 +5,14 @@
 
 #main-contact{
     height: 100vh;
-    padding: 0rem 3rem;
     /* padding-top: 8.3rem; */ /*📌*/
     position: relative;
+    padding: 0 3rem;
 }
 #main-contact #bg-img-div{
     background-image: url("../images/contact.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-size: 100%;*/
     width: 100%;
     height: 100%;
     opacity: 0.4; /*📌*/
@@ -41,7 +41,7 @@
 /* --------------------------------------------------------------------------------------- */
 #main-contact #content-div #content-div-header{
     background-color: #fff;
-    height: 45%;
+    height: auto;
     width: 100%;
     padding: 1rem;
     border: 0.1rem solid #b9b9b9;
@@ -102,7 +102,7 @@
 #main-contact #content-div #content-div-footer{
     border: 0.1rem solid #9e9e9e;
     background-color: #f77049;
-    height: 25%;
+    height: auto;
     margin-top: 1rem;
     color: white;
     width: 100%;
@@ -121,5 +121,66 @@
     font-size: 0.9rem;
     font-family: 'Ubuntu', sans-serif;
     letter-spacing: 0.1rem;
+}
+/* ------------------------------------------------------------------------------------------------ */
+@media only screen and (max-width: 1200px) {
+    #content-div-header-first-row h2{
+        font-size: 2rem;
+    }
+    #content-div-header-first-row p{
+        font-size: 0.9rem;
+    }
+
+}
+@media only screen and (max-width: 991px) {
+    #main-contact #content-div #blur-div{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+}
+@media only screen and (max-width: 767px) {
+    #main-contact{
+        height: 128vh;
+        padding: 0;
+    }
+    #main-contact #content-div{
+        padding: 0;
+    }
+    #main-contact #content-div #content-div-footer p{
+        font-size: 0.78rem;
+    }
+    #main-contact #content-div #content-div-footer h5{
+        font-size: 1rem;
+    }
+    #content-div-header-first-row {
+        padding-bottom: 1rem;
+    }
+    #content-div-header-first-row {
+        font-size: 0.8rem;
+    }
+    #main-contact #content-div #blur-div{
+        justify-content: center;
+    }
+   
+
+}
+@media only screen and (max-width: 574px) {
+    #main-contact #content-div{
+        padding: 0 0.5rem;
+    }
+    #main-contact #content-div #content-div-footer{
+        flex-direction: column;
+    }
+    #main-contact #content-div #content-div-footer .contact-footer-topic{
+        margin-bottom: 2.2rem;
+    }
+    #main-contact #content-div #content-div-header{
+        margin-top: 9rem;
+    }
+    #content-div-header-first-row p{
+        display: none;
+    }
+
 }
 

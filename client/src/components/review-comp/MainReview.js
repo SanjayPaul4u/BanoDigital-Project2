@@ -15,10 +15,10 @@ const MainReview = () => {
 
       <div className="row">
         
-        <div className="col-10 col-md-6 col-xl-6" id='addReview-Row'>
+        <div className="col-12 col-md-6 col-xl-6" id='addReview-Row'>
             <AddReview/>
         </div>
-        <div className="col-10 col-md-6 col-xl-6" id='displayReview-Row'>
+        <div className="col-12 col-md-6 col-xl-6" id='displayReview-Row'>
             <DisplayReview/>
         </div>
         

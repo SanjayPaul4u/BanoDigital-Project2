@@ -7,7 +7,8 @@
 
 #main-banner{
     /* background-color: #e3e3e3; */
-    height: 72vh;
+    min-height: 72vh;
+    max-height: auto;
     
 }
 #main-banner .row{
@@ -61,7 +62,7 @@
 }
 /* ---------------------------------------------------------------------------- */
 #right-banner-row{
-    /* background-color: #af2d2d; */
+    /* border: 2px solid red; */
     height: 100%;
     padding: 0;
     margin: 0rem;
@@ -93,4 +94,92 @@
     color: #7a7a7a;
     font-family: 'Kanit', sans-serif;
     text-align: center;
+}
+
+/* 📌📌------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1390px) {
+    #right-carausel-row-2{
+        display: none;
+    }
+    #left-carausel-row-1{
+        margin-left: 5rem;
+    }
+    .textForUnderstandUser1 { 
+        margin-top: 1rem;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    #left-carausel-row-1{
+        margin-left: 3rem;
+    }
+    #right-banner-row #carouselExampleIndicators {
+        width: 23rem;
+    }
+    #left-banner-raw h1 {
+        font-size: 1.9rem;
+    }
+    #left-banner-raw h3 {
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #main-banner .row{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #left-banner-raw{
+        width: 100%;
+    }
+    #right-banner-row #carouselExampleIndicators {
+        width: 32rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #right-banner-row #carouselExampleIndicators {
+        width: 26rem;
+    }
+    #left-carausel-row-1{
+        margin-left: 0.8rem;
+    }
+}
+@media only screen and (max-width: 574px) {
+    #right-banner-row #carouselExampleIndicators img{
+        height: 27.5rem;
+    }
+    #right-banner-row #carouselExampleIndicators {
+        width: 20rem;
+    }
+
+    #right-banner-row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #left-carausel-row-1{
+        padding-left: 0.5rem;
+        /* padding-right: 3.2rem; */
+    }
+}
+
+@media only screen and (max-width: 387px) {
+    #right-banner-row #carouselExampleIndicators img{
+        height: 22rem;
+    }
+    #right-banner-row #carouselExampleIndicators {
+        width: 17rem;
+    }
+    #left-carausel-row-1{
+        padding: 0rem;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 298px) {
+    #right-banner-row #carouselExampleIndicators img{
+        height: 19rem;
+    }
+    #right-banner-row #carouselExampleIndicators {
+        width: 14rem;
+    }
 }

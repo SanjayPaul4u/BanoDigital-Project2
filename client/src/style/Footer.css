@@ -6,21 +6,21 @@
 /* font-family: 'Ubuntu', sans-serif; */
 
 #main-footer{
+    padding-top: 2rem;
     background-color: #3e3e3e;
-    height: 30vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
-#main-footer-content{
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-around;
-    padding-top: 1rem;
-}
+
 #main-footer-content .main-footer-topic h4{
     font-family: 'Kanit', sans-serif;
     color: #fff;
+
+}
+#main-footer-content .main-footer-topic ul{
+    /* background-color: red; */
 }
 #main-footer-content .main-footer-topic ul li{
     list-style: none;
@@ -32,6 +32,7 @@
 }
 /* --------------------------------- */
 #sub-main-footer{
+    padding-top: 0.5rem;
     font-family: 'Ubuntu', sans-serif;
     background-color: #535353;
     height: 30%;
@@ -45,4 +46,35 @@
 }
 #sub-main-footer img{
     height: 1.5rem;
+}
+
+@media only screen and (max-width: 721px) {
+    #main-footer-content .main-footer-topic ul{
+        font-size: 0.9rem;
+    }
+    #sub-main-footer{
+        flex-direction: column;
+    }
+    
+}
+@media only screen and (max-width: 490px) {
+    #main-footer-content .row{
+        margin-right: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #main-footer-content .row .main-footer-topic{
+        width: 100%;
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+    #sub-main-footer{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
 }

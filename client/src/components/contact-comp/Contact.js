@@ -65,13 +65,13 @@ const Contact = () => {
           {/* FIRST DIV */}
           <div id="content-div-header">
               <div className="row">
-                  <div className="col-6 col-md-6 col-xl-6" id='content-div-header-first-row'>
+                  <div className="col-12 col-md-6 col-xl-6" id='content-div-header-first-row'>
                       <h2>Contacts</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam in sit, illo illum doloremque? Ullam ipsam maxime dolores nesciunt.</p>
                       <p>Lorem ipsum dolor sit amet.</p>
                       <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
                   </div>
-                  <div className="col-6 col-md-6 col-xl-6" id='content-div-header-second-row'>
+                  <div className="col-12 col-md-6 col-xl-6" id='content-div-header-second-row'>
                       <h5>Submit Contact Message</h5>
                       <form onSubmit={contactSubmitFunc}>
 

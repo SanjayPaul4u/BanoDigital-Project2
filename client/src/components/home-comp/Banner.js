@@ -39,7 +39,7 @@ const Banner = () => {
 
 
                     {/* LEFT -  CARAUSEL1  */}
-                    <div className="col-md-8 col-xl-8" id='left-carausel-row-1'>
+                    <div className="col-12 col-md-12 col-xl-8" id='left-carausel-row-1'>
                     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>

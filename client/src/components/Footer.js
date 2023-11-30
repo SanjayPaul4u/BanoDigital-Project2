@@ -10,44 +10,50 @@ const Footer = () => {
     <div className='' id='main-footer'>
 
       {/* MAIN FOOTER - CONTENT*/}
-      <div id='main-footer-content'>
+      <div className='container' id='main-footer-content'>
+        <div className="row">
 
-        <div className="main-footer-topic">
-          <ul>
-            <h4>BanoDigital</h4>
-            <li>We Build FullStack Website</li>
-            <li>We Develop MERN WebApp</li>
-          </ul>
-        </div>
-        <div className="main-footer-topic">
-          <ul>
-            <h4> Pages </h4>
-            <li> <Link to="/home"> Home </Link> </li>
-            <li> <Link to="/contact"> Contact </Link> </li>
-            <li> <Link to="/mainreview"> Rate Us </Link> </li>
-            <li> <Link to="/mainreview"> Rating And Reviews </Link> </li>
-          </ul>
-        </div>
-        <div className="main-footer-topic">
-          <ul>
-            <h4>Contact</h4>
-            <li><i className="fa-solid fa-phone"></i> 9064784593</li>
-            <li><i className="fa-solid fa-envelope"></i> sanjoypaul655@gmail.com</li>
-            <li><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239" rel="noreferrer" target='_blank'>LinkedIn</a> </li>
-          </ul>
-        </div>
-        <div className="main-footer-topic">
-          <ul>
-            <h4>Atribute</h4>
-            <li>Flaticon</li>
-            <li>FontAwesome</li>
-            <li>w3 school</li>
-            <li>ChatGTP 3.5</li>
-            <li>Nicepage</li>
-            <li>Pixabay</li>
-          </ul>
-        </div>
+          <div className="col-6 col-md-3 col-xl-3 main-footer-topic">
+              <ul>
+                <h4>BanoDigital</h4>
+                <li>We Build FullStack Website</li>
+                <li>We Develop MERN WebApp</li>
+              </ul>
+          </div>
 
+          <div className="col-6 col-md-3 col-xl-3 main-footer-topic">
+              <ul>
+                <h4> Pages </h4>
+                <li> <Link to="/home"> Home </Link> </li>
+                <li> <Link to="/contact"> Contact </Link> </li>
+                <li> <Link to="/mainreview"> Rate Us </Link> </li>
+                <li> <Link to="/mainreview"> Rating And Reviews </Link> </li>
+              </ul>
+          </div>
+
+          <div className="col-6 col-md-3 col-xl-3 main-footer-topic">
+              <ul>
+                <h4>Contact</h4>
+                <li><i className="fa-solid fa-phone"></i> 9064784593</li>
+                <li><i className="fa-solid fa-envelope"></i> sanjoypaul655@gmail.com</li>
+                <li><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjoy-paul-001605239" rel="noreferrer" target='_blank'>LinkedIn</a> </li>
+              </ul>
+          </div>
+
+          <div className="col-6 col-md-3 col-xl-3 main-footer-topic">
+              <ul>
+                <h4>Atribute</h4>
+                <li>Flaticon</li>
+                <li>FontAwesome</li>
+                <li>w3 school</li>
+                <li>ChatGTP 3.5</li>
+                <li>Nicepage</li>
+                <li>Pixabay</li>
+              </ul>
+          </div>
+
+
+        </div>
       </div>
 
       {/* SUB MAIN FOOOTER */}
