@@ -17,14 +17,13 @@ const DisplayReview = () => {
 
   // console.log(allReview);
   return (
-    <div>
+    <>
       {/* DISPLAYING REVIEW BY ROW */}
       {allReview && <div className="row">
         {allReview.map((element)=>{
           return <div key={element._id} className="col-12 col-md-12 col-xl-12">
           <div className='display-review-card'>
                 <div>
-                    <div className='dp'>{element.name.charAt(0).toUpperCase()}</div>
                     <div className='review-star'>
                       <i className={`${element.starCount>=1?"fa-solid":"fa-regular"} fa-star`}></i>
                       <i className={`${element.starCount>=2?"fa-solid":"fa-regular"} fa-star`}></i>
@@ -43,7 +42,7 @@ const DisplayReview = () => {
         
       </div>}
           
-    </div>
+    </>
   )
 }
 

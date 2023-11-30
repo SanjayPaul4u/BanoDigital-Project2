@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../../style/MainReview.css"
 import DisplayReview from './DisplayReview'
 import AddReview from './AddReview'
 
 
+
 const MainReview = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   return (
     <div className='container' id='main-mainReview'>
 

@@ -43,7 +43,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-right: 10rem;
 
 }
 #brandLogo{
@@ -51,5 +50,21 @@
     margin-right: 0.8rem;
 }
 .navbar-nav .nav-link{
-    margin-right: 2rem;
+    margin-right: 1.4rem;
+}
+
+@media only screen and (max-width: 1200px){
+    .navbar-nav .nav-link{
+        margin-right: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    #navbar-ul{
+        align-items: center;
+    }
+    .navbar-nav .nav-link{
+        font-size: 1rem;
+    }
 }

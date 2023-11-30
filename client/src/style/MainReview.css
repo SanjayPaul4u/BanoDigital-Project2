@@ -17,7 +17,11 @@
 /* 📌📌---------------------------------------------------------------------------------------------------------- */
 #displayReview-Row{
     padding-left: 2rem;
-    padding-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
 }
 
 #displayReview-Row .display-review-card{
@@ -35,26 +39,11 @@
 }
 #displayReview-Row .display-review-card .review-star{
     color: #fbb736;
-    margin-top: -3rem;
-    /* text-align: end; */
-    padding-left: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+
 }
-#displayReview-Row .display-review-card .dp{
-    margin-top: -1rem;
-    display: inline-block;
-    background-color: #b4b4b4;
-    box-shadow: 0.1rem 0.2rem 0.4rem rgb(115, 115, 115);
-    text-align: center;
-    height: 4rem;
-    width: 4rem;
-    font-size: 2.6rem;
-    margin-top: -3rem;
-    margin-left: -3rem;
-    border-radius: 50%;
-    font-weight: 500;
-    color: #fff;
-}
+
 #displayReview-Row .sub-display-review-card h6{
     margin-top: -1rem;
     text-align: end;
@@ -87,7 +76,9 @@
 
 }
 #addReview-Row #add-review-div{
-    background-color: #f77049;
+    background-color: #f77049eb;
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
     min-height: 13rem;
     height: auto;
     padding: 1rem;
@@ -135,9 +126,11 @@
     color: #f77049;
 }
 #addReview-Row #user-review-div{
-    background-color: #f77049;
+    background-color: #ff7b56eb;
     height: 13rem;
     padding: 1rem;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
     
 }
 #addReview-Row #user-review-div h5{
