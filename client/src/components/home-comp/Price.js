@@ -19,7 +19,7 @@ const Price = () => {
           <div className="row">
 
 
-              <div className="price-list col-10 col-md-6 col-xl-3 mb-4" id='price-list-1'>
+              <div className="price-list col-6 col-md-6 col-xl-3 mb-4" id='price-list-1'>
               <div className="card price-card">
                   <h5 className="card-title">Portfolio</h5>
                 <div className="card-body">
@@ -36,7 +36,7 @@ const Price = () => {
               </div>
               </div>
 
-              <div className="price-list col-10 col-md-6 col-xl-3 mb-4" id='price-list-1'>
+              <div className="price-list col-6 col-md-6 col-xl-3 mb-4" id='price-list-1'>
               <div className="card price-card">
                   <h5 className="card-title">Business</h5>
                 <div className="card-body">
@@ -53,7 +53,7 @@ const Price = () => {
               </div>
               </div>
 
-              <div className="price-list col-10 col-md-6 col-xl-3 mb-4" id='price-list-1'>
+              <div className="price-list col-6 col-md-6 col-xl-3 mb-4" id='price-list-1'>
               <div className="card price-card">
                   <h5 className="card-title">E-Commerce</h5>
                 <div className="card-body">
@@ -70,7 +70,7 @@ const Price = () => {
               </div>
               </div>
 
-              <div className="price-list col-10 col-md-6 col-xl-3 mb-4" id='price-list-1'>
+              <div className="price-list col-6 col-md-6 col-xl-3 mb-4" id='price-list-1'>
               <div className="card price-card">
                   <h5 className="card-title">Customize</h5>
                 <div className="card-body">

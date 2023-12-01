@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../style/Signup.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import AuthContext from '../context/auth/authContext'
+import GetCookie from '../hooks/getCookie'
+
 
 
 
@@ -30,12 +32,29 @@ const Signup = () => {
       console.log("Invalid Creadential");
     }
   }
+ 
+  
+
+  // using "useLocation"
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname);
+  console.log(path);
+
+   // using "useEffect TODO📌📌📌📌📌📌📌📌📌📌📌📌📌"
+  useEffect(() => {
+    setPath(location.pathname);
+    if(GetCookie("bdigital-token") && path==="/signup"){
+      navigate(-1);
+      console.log("okay");
+    }
+    // eslint-disable-next-line
+  }, [])
   return (
     <div className='container' id='main-signup'>
-        <div id="sub-signup-div">
+        <div id="sub-signup-div" className='col-10 col-md-6 col-xl-4'>
           <div id='heading-div'>
             <h3>SignUp</h3>
-            <p>Creat Account</p>
+            <p>Creat Account</p> 
           </div>
           <form onSubmit={signupSubmitFunc}>
 

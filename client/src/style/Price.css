@@ -9,7 +9,7 @@
     min-height: 72vh;
     max-width: auto;
     background-color: #f6e58d;
-    
+    margin-bottom: -8rem
 }
 /* #main-price .row{
 } */
@@ -96,39 +96,51 @@
 }
 
 /* ---------------------------------------------------------------- */
+@media only screen and (max-width: 1199px){
+    #main-price-body .row{
+        padding: 0 9rem;;
+    }
+
+}
+@media only screen and (max-width: 991px){
+    #main-price-body .row{
+        padding: 0 0;
+    }
+
+}
 @media only screen and (max-width: 767px){
-    #main-price .row{
+    #main-price-body .row .price-list{
+        padding: 0.2rem;
+    }
+    #main-price-body .price-card{
+        height: 21rem;
+    }
+    #main-price-body .price-card:hover{
+        height: 24rem;
+    }
+    
+    #main-price-body .price-card .card-body .btn {
+        font-size: 0.9rem;
+    }
+    #main-price-body .price-card p {
+        font-size: 0.9rem;
+    }
+    #main-price-body .price-card .card-body-head h3 {
+        font-size: 1.6rem;
+    }
+    #main-price-body .price-card h6 {
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 460px){
+    #main-price-body .row{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        padding: 0 0.5rem;
+    }
+    #main-price-body .row .price-list{
+        width: 100%;
     }
 }
-@media only screen and (max-width: 360px){
-    #main-price-body {
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-
-    #main-price-body .price-card{
-        height: 16rem;
-    }
-    #main-price-body .price-card:hover{
-        height: 19rem;
-    }
-    #main-price-body .price-card h5 {
-        padding: 0.5rem;
-        font-size: 1rem;
-    }
-    #main-price-body .price-card .card-body-head h3 {
-        font-size: 1.5rem;
-    }
-    #main-price-body .price-card h6 {
-        font-size: 1rem;
-    }
-    #main-price-body .price-card p {
-        font-size: 0.8rem;
-    }
-    #main-price-body .price-card .card-body .btn {
-        font-size: 0.8rem;
-    }
-} 

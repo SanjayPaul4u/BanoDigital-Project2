@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className='container' id='main-login'>
-        <div id="sub-login-div">
+        <div id="sub-login-div" className='col-10 col-md-6 col-xl-4'>
           <div id='heading-div'>
             <h3>Login</h3>
           </div>

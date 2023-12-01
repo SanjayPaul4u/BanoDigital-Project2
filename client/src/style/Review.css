@@ -105,6 +105,9 @@
     background: linear-gradient(to right, #9933ff 50%, #00ccff 100%) ;
     border: none;
 }
+#main-review-bottoms{
+    margin-left: -2rem;
+}
 
 /* ------------------------------------------------------------------------------- */
 @media only screen and (max-width:1390px){
@@ -117,6 +120,11 @@
         width: 70%;
     }
 }
+@media only screen and (max-width:767px){
+    #reviews-div .review-card .sub-review-card{
+        padding-right: 0;
+    }
+}
 @media only screen and (max-width:360px){
     #reviews-div .review-card .dp {
         height: 3rem;
@@ -125,5 +133,8 @@
     }
     #reviews-div .review-card .review-star {
         margin-top: -2.5rem;
+    }
+    #reviews-div .review-card .sub-review-card{
+        padding-left: 0;
     }
 }

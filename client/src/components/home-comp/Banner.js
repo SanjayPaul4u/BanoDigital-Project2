@@ -74,7 +74,7 @@ const Banner = () => {
                     </div>
 
                     {/* RIGHT - CARAUSEL2  */}
-                    <div className="col-md-4 col-xl-4 position-relative" id='right-carausel-row-2' style={{overflow:"hidden"}}>
+                    <div className="col-xl-4 position-relative" id='right-carausel-row-2' style={{overflow:"hidden"}}>
                         <div id="carouselExampleControls" className="carousel slide position-absolute" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">

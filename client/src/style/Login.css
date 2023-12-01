@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 /* font-family: 'Ubuntu', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+/* font-family: 'Kanit', sans-serif; */
 
 #main-login{
-    padding-top: 0rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
 #sub-login-div{
+    margin-top: 7rem;
     font-family: 'Ubuntu', sans-serif;
-    height: auto;
-    width: 27%;
     padding: 1rem;
-    border: 0.1rem solid #6747c7;
+    border: 0.1rem solid #f0e8e1;
     border-radius: 0.3rem;
     background-color: #f7f6f9;
 }
 #sub-login-div #heading-div{
-    background-color: #6747c7;
+    background-color: #f77049eb;
     margin: -1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
@@ -33,13 +33,20 @@
     margin-bottom: -1rem;
     margin-top: 2rem;
 }
+#sub-login-div #footer-div a{
+    color: #f77049eb;
+    font-weight: 500;
+    font-size: 0.9rem;
+    font-family: 'Kanit', sans-serif;
+    
+}
 #sub-login-div form{
 }
 #sub-login-div form .btn{
     border:none;
-    background: linear-gradient(to top left, #00ccff 0%, #9933ff 50%);
+    background: linear-gradient(to top left, #00ccff 0%, #f77049eb 50%);
 }
 #sub-login-div form .btn:hover{
     border:none;
-    background: linear-gradient(to top left, #9933ff 0%, #00ccff 100%);
+    background: linear-gradient(to top left, #f77049eb 50%, #00ccff 100%);
 }

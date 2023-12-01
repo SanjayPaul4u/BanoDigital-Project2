@@ -64,7 +64,7 @@ const Review = () => {
             })
             }
 
-            <div className=''>
+            <div id='main-review-bottoms'>
               <Link className='btn btn-sm btn-primary' to="/mainreview">Rate Us</Link>
               <Link className='btn btn-sm btn-primary mx-2' to="/mainreview">More Review</Link>
             </div>

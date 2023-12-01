@@ -19,11 +19,11 @@
 /* ---------------------------------------------------------------------------- */
 #left-banner-raw{
     /* background-color: rgb(255, 239, 239); */
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
     padding-left: 0rem;
+    padding-right: 1.5rem;
 }
 #left-banner-raw #five-star{
     color: #fbb736;
@@ -56,14 +56,14 @@
     outline: none;
     border: none;
     background: linear-gradient(to right, #00ccff 0%, #9933ff 100%);
-    font-weight: 5000;
+    font-weight: 500;
+    margin-bottom: 1rem
 }
 #banner-btn:hover{
     background: linear-gradient(to left, #00ccff 0%, #9933ff 100%);
 }
 /* ---------------------------------------------------------------------------- */
 #right-banner-row{
-    /* border: 2px solid red; */
     height: 100%;
     padding: 0;
     margin: 0rem;
@@ -95,92 +95,71 @@
     color: #7a7a7a;
     font-family: 'Kanit', sans-serif;
     text-align: center;
+    
 }
 
 /* 📌📌------------------------------------------------------------------- */
 
-@media only screen and (max-width: 1390px) {
+@media only screen and (max-width: 1390px){
     #right-carausel-row-2{
         display: none;
     }
-    #left-carausel-row-1{
-        margin-left: 5rem;
+    #right-banner-row #carouselExampleIndicators{
+        width: auto;
     }
-    .textForUnderstandUser1 { 
-        margin-top: 1rem;
+    #left-carausel-row-1{
+        /* border: 2px solid green; */
+        margin-right: 0rem;
+    }
+    #right-banner-row .row{
+        /* background-color: red; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .textForUnderstandUser1{
+        margin-top: 0;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+    #left-banner-raw {
+        padding-top: 4rem;
+        padding-right: 0rem;
     }
 }
-@media only screen and (max-width: 1199px) {
-    #left-carausel-row-1{
-        margin-left: 3rem;
-    }
-    #right-banner-row #carouselExampleIndicators {
-        width: 23rem;
-    }
-    #left-banner-raw h1 {
-        font-size: 1.9rem;
+@media only screen and (max-width: 991px){
+    #left-banner-raw h1{
+        font-size: 1.7rem;
     }
     #left-banner-raw h3 {
         font-size: 1.3rem;
     }
 }
-@media only screen and (max-width: 991px) {
-    #main-banner .row{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+@media only screen and (max-width: 360px){
+    #right-banner-row #carouselExampleIndicators img {
+        height: 27rem;
     }
-    #left-banner-raw{
-        width: 100%;
+    #left-banner-raw h1{
+        font-size: 1.5rem;
     }
-    #right-banner-row #carouselExampleIndicators {
-        width: 32rem;
+    #left-banner-raw h3 {
+        font-size: 1.2rem;
     }
-}
-@media only screen and (max-width: 767px) {
-    #right-banner-row #carouselExampleIndicators {
-        width: 26rem;
-    }
-    #left-carausel-row-1{
-        margin-left: 0.8rem;
-    }
-}
-@media only screen and (max-width: 574px) {
-    #right-banner-row #carouselExampleIndicators img{
-        height: 27.5rem;
-    }
-    #right-banner-row #carouselExampleIndicators {
-        width: 20rem;
+    #left-banner-raw p {
+        font-size: 0.9rem;
     }
 
-    #right-banner-row{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #left-carausel-row-1{
-        padding-left: 0.5rem;
-        /* padding-right: 3.2rem; */
-    }
 }
+@media only screen and (max-width: 280px){
+    #left-banner-raw h1{
+        font-size: 1.3rem;
+    }
+    #left-banner-raw h3 {
+        font-size: 1rem;
+    }
+    #left-banner-raw p {
+        font-size: 0.8rem;
+    }
 
-@media only screen and (max-width: 387px) {
-    #right-banner-row #carouselExampleIndicators img{
-        height: 22rem;
-    }
-    #right-banner-row #carouselExampleIndicators {
-        width: 17rem;
-    }
-    #left-carausel-row-1{
-        padding: 0rem;
-        margin: 0;
-    }
-}
-@media only screen and (max-width: 298px) {
-    #right-banner-row #carouselExampleIndicators img{
-        height: 19rem;
-    }
-    #right-banner-row #carouselExampleIndicators {
-        width: 14rem;
-    }
 }
