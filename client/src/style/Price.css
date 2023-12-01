@@ -6,10 +6,13 @@
 #main-price{
     padding-top: 6rem;
     margin-top: 1.5rem;
+    min-height: 72vh;
+    max-width: auto;
     background-color: #f6e58d;
-    height: 72vh;
-
+    
 }
+/* #main-price .row{
+} */
 #main-price #main-price-header{
     font-family: 'Kanit', sans-serif;
     text-align: center;
@@ -91,3 +94,41 @@
     font-weight: 500;
     font-family: 'Kanit', sans-serif;
 }
+
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 767px){
+    #main-price .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media only screen and (max-width: 360px){
+    #main-price-body {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    #main-price-body .price-card{
+        height: 16rem;
+    }
+    #main-price-body .price-card:hover{
+        height: 19rem;
+    }
+    #main-price-body .price-card h5 {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    #main-price-body .price-card .card-body-head h3 {
+        font-size: 1.5rem;
+    }
+    #main-price-body .price-card h6 {
+        font-size: 1rem;
+    }
+    #main-price-body .price-card p {
+        font-size: 0.8rem;
+    }
+    #main-price-body .price-card .card-body .btn {
+        font-size: 0.8rem;
+    }
+} 

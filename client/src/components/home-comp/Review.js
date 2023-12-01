@@ -20,9 +20,9 @@ const Review = () => {
       <div className="row">
 
         {/* left-review-row */}
-        <div className="col-10 col-md-6 col-xl-6" id='left-review-row'>
-          <div id='main-review-in=mg'>
-              <img src={WebDesignPng} alt="imgError" />
+        <div className="col-12 col-md-12 col-xl-6" id='left-review-row'>
+          <div  id='main-review-in=mg'>
+              <img className='card-img-top' src={WebDesignPng} alt="imgError" />
           </div>
         </div>
 
@@ -30,7 +30,7 @@ const Review = () => {
 
 
         {/* right-review-row */}
-        <div className="col-10 col-md-6 col-xl-6" id='right-review-row'>
+        <div className="col-12 col-md-12 col-xl-6" id='right-review-row'>
           <div id='main-review-heading'>
               <h3>Rating & Reviews</h3>
               <h4>What Our Client Say</h4>

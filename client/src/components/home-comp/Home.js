@@ -1,9 +1,9 @@
 import React from 'react'
 import "../../style/Home.css"
 import Banner from './Banner'
-// import Price from './Price'
-// import WhyChooseUs from './WhyChooseUs'
-// import Review from './Review'
+import Price from './Price'
+import WhyChooseUs from './WhyChooseUs'
+import Review from './Review'
 
 
 
@@ -14,9 +14,9 @@ const Home = () => {
     <div className='container ' id='main-home'>
         {/* <h1>This is Home page</h1> */}
         <Banner/>
-        {/* <Price/>
+        <Price/>
         <WhyChooseUs/>
-        <Review/> */}
+        <Review/>
 
     </div>
   )

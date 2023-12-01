@@ -1,7 +1,8 @@
 #main-whychooseus{
     background-color: #efefef;
     background: linear-gradient(to bottom, #e1e1e1  25%, #efefef 75%);
-    height: 90vh;
+    min-height: 90vh;
+    max-height: auto;
     padding-top: 7rem;
 }
 /* --------------------------------------------------------------------- */
@@ -43,22 +44,64 @@
 }
 /* --------------------------------------------------------------------- */
 #chooseus-right-row{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #chooseus-right-row #img-div{
+    height: 100%;
     background-color: white;
     border-radius: 75% 25% 70% 30% / 43% 78% 22% 57%  ;
 }
 #chooseus-right-row #chooseus-img{
-    height: 42rem;
-    margin-top: -4.2rem;
-    margin-left: -7rem;
+    height: 120%;
+    margin-top: -6.2rem;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
-/* The animation code */
-/* @keyframes whyChooseDiv {
-    0%   {background-color:#87b4ce; left:0px; top:0px;}
-    50%  {background-color:#fdffd1; left:200px; top:200px;}
-    55%  {background-color:#87b4ce; left:200px; top:200px;}
-    100% {background-color:#87b4ce; left:0px; top:0px;}
-  } */
+@media only screen and (max-width:1199px){
+    #chooseus-right-row #img-div{
+        height: 80%;
+    }
+    #chooseus-right-row #chooseus-img{
+        height: 120%;
+        margin-top: -4.7rem;
+    }
+}
+@media only screen and (max-width:991px){
+    #chooseus-right-row #img-div{
+        height: 75%;
+    }
+    #chooseus-right-row #chooseus-img{
+        height: 120%;
+        margin-top: -4rem;
+    }
+    #chooseus-left-row .row .why-row div img {
+        height: 3rem;
+        width: 3rem;
+    }
+    #chooseus-left-row .row .why-row div {
+        height: 10rem;
+    }
+    #chooseus-left-row #main-whychooseus-header p {
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width:767px){
+    #chooseus-right-row{
+        display: none;
+    }
+    #chooseus-left-row .row {
+        margin: 0;
+        padding-right: 0.8rem;
+    }
+}
+@media only screen and (max-width:370px){
+    #chooseus-left-row .row .why-row {
+        padding: 0.1rem;
+    }
+    #chooseus-left-row .row .why-row h6{
+        text-align: center;
+    }
+}

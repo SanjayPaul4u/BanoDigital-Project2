@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
         
         <div className="row">
           {/* LEFT SIDE */}
-          <div className="col-10 col-md-6 col xl-6"  id='chooseus-left-row'>
+          <div className="col-12 col-md-6 col xl-6"  id='chooseus-left-row'>
 
             <div id="main-whychooseus-header">
               <h3>Why Choose Us</h3>
@@ -53,9 +53,9 @@ const WhyChooseUs = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="col-10 col-md-6 col xl-6" id='chooseus-right-row'>
-            <div id="img-div">
-              <img src={thoughtGirl} alt="imgError" id="chooseus-img" />
+          <div className="col-12 col-md-6 col xl-6" id='chooseus-right-row'>
+            <div id="img-div" className='card-body'>
+              <img src={thoughtGirl} alt="imgError" id="chooseus-img" className='card-img-top'/>
             </div>
           </div>
         </div>

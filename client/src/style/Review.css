@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
 /* font-family: 'Kanit', sans-serif; */
 #main-review{
-    height: 90vh;
+    min-height: 90vh;
+    max-height: auto;
     background-color: #efefef;
     padding-top: 4.5rem;
 }
@@ -9,10 +10,12 @@
 #main-review .row{
     height: 100%;
     margin: 0; /* by default */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 #main-review .row #left-review-row img{
-    height: 28rem;
 }
 #main-review .row #left-review-row{
     padding: 0;
@@ -21,6 +24,7 @@
     align-items: flex-end;
     background-color: #fff;
     border-radius: 64% 36% 70% 30% / 68% 78% 22% 32% ;
+    
 }
 /* ---------------------------------------------------------- */
 #main-review .row #right-review-row{
@@ -67,7 +71,7 @@
     margin-top: -1rem;
     display: inline-block;
     background-color: #b4b4b4;
-    box-shadow: 0.1rem 0.2rem 0.4rem rgb(115, 115, 115);
+    box-shadow: 0.05rem 0.1rem 0.2rem #a5a5a5;
     text-align: center;
     height: 4rem;
     width: 4rem;
@@ -100,4 +104,26 @@
 #reviews-div .btn:hover{
     background: linear-gradient(to right, #9933ff 50%, #00ccff 100%) ;
     border: none;
+}
+
+/* ------------------------------------------------------------------------------- */
+@media only screen and (max-width:1390px){
+    #reviews-div .review-card .sub-review-card p {
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width:1199px){
+    #main-review .row #left-review-row{
+        width: 70%;
+    }
+}
+@media only screen and (max-width:360px){
+    #reviews-div .review-card .dp {
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
+    }
+    #reviews-div .review-card .review-star {
+        margin-top: -2.5rem;
+    }
 }
