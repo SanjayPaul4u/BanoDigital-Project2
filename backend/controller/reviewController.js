@@ -72,15 +72,16 @@ const getAllReviewFunc = async (req, res, next) =>{
         let success = false;
         const {page, pageContent} = req.query;
         const review_data = await Reviews.find().sort({createdAt: -1}).limit(pageContent).skip(pageContent*(page-1));
+        const totalResult = await Reviews.countDocuments({});
         
         success = true;
-        // res.status(200).json({review_data});
-        res.status(200).json({success, message: "Got All User Review successfully", review_data});
+        // res.status(200).json({totalResult});
+        res.status(200).json({success, message: "Got All User Review successfully", review_data, totalResult});
     } catch (error) {
         let success = false;
         console.log("Get All review error***");
         console.log(error);
-        res.status(500).json({success, error:error.message})
+        res.status(500).json({success, error:error.message});
     }
 }
 

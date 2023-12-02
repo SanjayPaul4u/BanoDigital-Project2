@@ -17,6 +17,8 @@ import AlertState from './context/alert/alertState'
 import ReviewState from './context/review/reviewState'
 import TopLoadginBar from './components/TopLoadginBar'
 import ProgressState from './context/progress/progressState'
+import ScrallingReviewState from './context/review/scrallingReviewState'
+
 
 
 
@@ -26,6 +28,7 @@ const App = () => {
     <> 
       <ProgressState>
       <AlertState>
+      <ScrallingReviewState>
       <ReviewState>
       <ContactState>
       <AuthState>
@@ -47,6 +50,7 @@ const App = () => {
       </AuthState>
       </ContactState>
       </ReviewState>
+      </ScrallingReviewState>
       </AlertState>
       </ProgressState>
     </>

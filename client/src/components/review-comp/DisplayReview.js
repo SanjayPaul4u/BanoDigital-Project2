@@ -1,11 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import ReviewContext from '../../context/review/reviewContext';
+import ScrallingReviewContext from '../../context/review/scrallingReviewContext';
+
 
 
 const DisplayReview = () => {
   // using "useCotext" 📌
   const review_context = useContext(ReviewContext);
-  const {getAllReviewApicall, allReview, capitalizedWord} = review_context;
+  const {capitalizedWord} = review_context;
+  const scralling_review_context = useContext(ScrallingReviewContext);
+  const {getAllReviewApicall, allReview,} = scralling_review_context;
 
    // USE EFFECT 📌
    useEffect(() => {

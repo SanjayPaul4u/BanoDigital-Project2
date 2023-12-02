@@ -4,16 +4,20 @@ import axios from "axios";
 import GetCookie from "../../hooks/getCookie";
 import AlertContext from "../alert/alertContext";
 import ProgressContext from "../progress/progressContext";
+import ScrallingReviewContext from "./scrallingReviewContext";
+
 
 
 const ReviewState = (props)=>{
     const host = "http://127.0.0.1:5500"
 
     const [userReview, setUserReview] = useState(null);
-    const [allReview, setAllReview] = useState(null);
     const [isUserWantDelete, setIsUserWantDelete] = useState(false);
     const progress_context = useContext(ProgressContext);
     const {setProgressFunc} = progress_context;
+    const scralling_review_context = useContext(ScrallingReviewContext);
+    const {getAllReviewApicall} = scralling_review_context;
+
 
 
     // using "useContext" 📌 
@@ -44,27 +48,7 @@ const ReviewState = (props)=>{
         }
     }
 
-    // GET All REVIEW -without token📌
-    const getAllReviewApicall = async() =>{
-        try {
-            const response = await axios({
-                method:"get",
-                url: `${host}/api/review/getallreview`,
-                headers: {
-                    "Content-Type": "application/json" //important
-                }
-            })
-            const data = await response.data;
-            // console.log(data.review_data);
-            setAllReview(data.review_data);
-            
-        } catch (error) {
-            console.log("Get All Review Api call Error*****");
-            console.log(error);
-        }
-    }
-
-
+    
     // ADD REVIEW 📌 
     const addReviewApicall = async(reviewData) =>{
         try {
@@ -170,7 +154,7 @@ const ReviewState = (props)=>{
         setIsUserWantDelete(true);
     }
 
-    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, getAllReviewApicall, delteReviewApicall, editReviewApicall, allReview, capitalizedWord, isUserWantDelete, setIsUserWantDelete, onclickDeleteIconFunc}}>
+    return <ReviewContext.Provider value={{addReviewApicall, getUserReviewApicall, userReview,setUserReview, delteReviewApicall, editReviewApicall, capitalizedWord, isUserWantDelete, setIsUserWantDelete, onclickDeleteIconFunc}}>
         {props.children}
     </ReviewContext.Provider>
 }

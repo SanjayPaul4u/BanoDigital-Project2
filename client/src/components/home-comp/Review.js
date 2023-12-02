@@ -3,12 +3,16 @@ import "../../style/Review.css"
 import WebDesignPng from '../../images/wev-design.png'
 import {Link} from 'react-router-dom'
 import ReviewContext from '../../context/review/reviewContext'
+import ScrallingReviewContext from '../../context/review/scrallingReviewContext'
+
 
 
 const Review = () => {
   // using "useContext" 📌
   const review_context = useContext(ReviewContext);
-  const {getAllReviewApicall, allReview, capitalizedWord} = review_context;
+  const {capitalizedWord} = review_context;
+  const scralling_review_context = useContext(ScrallingReviewContext);
+  const {getAllReviewApicall, allReview,} = scralling_review_context;
 
    // USE EFFECT 📌
    useEffect(() => {
