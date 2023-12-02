@@ -3,6 +3,7 @@ import ReviewContext from "./reviewContext";
 import axios from "axios";
 import GetCookie from "../../hooks/getCookie";
 import AlertContext from "../alert/alertContext";
+import ProgressContext from "../progress/progressContext";
 
 
 const ReviewState = (props)=>{
@@ -11,6 +12,9 @@ const ReviewState = (props)=>{
     const [userReview, setUserReview] = useState(null);
     const [allReview, setAllReview] = useState(null);
     const [isUserWantDelete, setIsUserWantDelete] = useState(false);
+    const progress_context = useContext(ProgressContext);
+    const {setProgressFunc} = progress_context;
+    setProgressFunc(50);
 
 
     // using "useContext" 📌 
@@ -20,6 +24,7 @@ const ReviewState = (props)=>{
     // GET USER REVIEW 📌
     const getUserReviewApicall = async() =>{
         try {
+            setProgressFunc(50);
             const token = GetCookie("bdigital-token");
             const response = await axios({
                 method:"get",
@@ -28,9 +33,11 @@ const ReviewState = (props)=>{
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             // console.log(data.review_data);
             setUserReview([data.review_data]);
+            setProgressFunc(100);
             
         } catch (error) {
             console.log("Get User Review Api call Error*****");
@@ -62,6 +69,7 @@ const ReviewState = (props)=>{
     // ADD REVIEW 📌 
     const addReviewApicall = async(reviewData) =>{
         try {
+            setProgressFunc(50);
             const token = GetCookie("bdigital-token");
             const response = await axios({
                 method:"post",
@@ -71,11 +79,13 @@ const ReviewState = (props)=>{
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             console.log(data);
             showAlertFunc("success", "Rating and Review Added Successfully");
             getAllReviewApicall();
             setUserReview([data.saved_review_data]);
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("Add Review Api call Error*****");
@@ -95,6 +105,7 @@ const ReviewState = (props)=>{
     // Edit REVIEW 📌 
     const editReviewApicall = async(reviewData, id) =>{
         try {
+            setProgressFunc(50);
             const token = GetCookie("bdigital-token");
             const response = await axios({
                 method:"patch",
@@ -104,11 +115,13 @@ const ReviewState = (props)=>{
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             console.log(data);
             showAlertFunc("success", "Edited Rating & Review Successfully");
             getAllReviewApicall();
             setUserReview([data.updated_review_data]);
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("editReviewApicall Error*****");
@@ -127,16 +140,19 @@ const ReviewState = (props)=>{
     // GET All REVIEW -without token📌
     const delteReviewApicall = async(id) =>{
         try {
+            setProgressFunc(50);
             const token = GetCookie("bdigital-token");
             const response = await axios({
                 method:"delete",
                 url: `${host}/api/review/deletereview/${id}/${token}`
             })
+            setProgressFunc(80);
             await response.data;
             // console.log(data);
             getAllReviewApicall();
             setUserReview(null);
             showAlertFunc("success", "Your Rating & Review Deleted Successfully");
+            setProgressFunc(100);
         } catch (error) {
             console.log("delteReviewApicall Error*****");
             console.log(error);

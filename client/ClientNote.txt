@@ -96,3 +96,7 @@ frontend: 28. Api Call Done - Get User Rating and Review, Get All Rating and Rev
 frontend: 29. Api Call Done - Delete User Rating and Review
 
 frontend: 30. Api Call Done - Edit User Rating and Review
+
+
+frontend: 31. Adding Top Loading -completed
+        -  npm  i react-top-loading-bar

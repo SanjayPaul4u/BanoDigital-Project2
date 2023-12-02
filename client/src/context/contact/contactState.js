@@ -3,17 +3,23 @@ import ContactContext from './contactContext';
 import axios from 'axios';
 import GetCookie from '../../hooks/getCookie';
 import AlertContext from "../alert/alertContext";
+import ProgressContext from '../progress/progressContext';
+
 
 const ContactState = (props) =>{  
     const host = "http://127.0.0.1:5500" 
     // using "useContext" 
     const alert_context = useContext(AlertContext);
     const { showAlertFunc } = alert_context;
+    const progress_context = useContext(ProgressContext);
+    const {setProgressFunc} = progress_context;
+    
 
     // CONTACT SUBMIT API CALL 📌
     const contactSubmitApiCall = async(contactData)=>{
         console.log(contactData);
         try {
+            setProgressFunc(50);
             const token = GetCookie("bdigital-token");            
             const response = await axios({
                 method:"post",
@@ -23,9 +29,11 @@ const ContactState = (props) =>{
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             // console.log(data);
             showAlertFunc("success", `Contact Message Submmited Successfully`);
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("contactSubmitApiCall error***");

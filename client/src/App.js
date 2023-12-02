@@ -15,22 +15,22 @@ import AuthState from './context/auth/authState'
 import ContactState from './context/contact/contactState'
 import AlertState from './context/alert/alertState'
 import ReviewState from './context/review/reviewState'
-
-
-
-
+import TopLoadginBar from './components/TopLoadginBar'
+import ProgressState from './context/progress/progressState'
 
 
 
 
 const App = () => {
   return (
-    <>
+    <> 
+      <ProgressState>
       <AlertState>
       <ReviewState>
       <ContactState>
       <AuthState>
         <BrowserRouter>
+          <TopLoadginBar/>
           <Navbar/>
           <MainAlert/>
             <Routes>
@@ -48,6 +48,7 @@ const App = () => {
       </ContactState>
       </ReviewState>
       </AlertState>
+      </ProgressState>
     </>
   )
 }

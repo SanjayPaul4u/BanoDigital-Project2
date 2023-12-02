@@ -6,7 +6,7 @@ import GetCookie from '../../hooks/getCookie'
 import RemoveCookie from '../../hooks/removeCookie'
 import AlertContext from "../alert/alertContext";
 import ReviewContext from "../review/reviewContext";
-
+import ProgressContext from "../progress/progressContext";
 
 
 
@@ -19,10 +19,14 @@ const AuthState = (props) => {
     const {showAlertFunc} = alert_context;
     const review_context = useContext(ReviewContext);
     const {setUserReview} = review_context;
+    const progress_context = useContext(ProgressContext);
+    const {setProgressFunc} = progress_context;
 
     // GET USER API CALL 📌
     const getUserApiCall = async () =>{
         try {
+            setProgressFunc(50);
+            
             const token = GetCookie("bdigital-token");
             const response = await axios({
                 method: "get",
@@ -31,10 +35,11 @@ const AuthState = (props) => {
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             // console.log(data.user_data);
             setUser([data.user_data])
-            
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("getUserApiCall error********");
@@ -45,6 +50,7 @@ const AuthState = (props) => {
     // SIGN UP API CALL 📌
     const singUpApiCall = async(userData) =>{
         try {  
+            setProgressFunc(50);
             const response = await axios({
                 method: "post",
                 url:`${host}/api/auth/signup`,
@@ -53,11 +59,13 @@ const AuthState = (props) => {
                     "Content-Type": "application/json" //important
                 }
             })
+            setProgressFunc(80);
             const data = await response.data;
             // console.log(data);
             SetCookie("bdigital-token", data.token);
             setUser([data.saved_data]);
             showAlertFunc("success", "Account Created Successfully");
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("singUpApiCall error********");
@@ -75,6 +83,7 @@ const AuthState = (props) => {
     // LOGIN API CALL 📌
     const logInApiCall = async(userData) =>{
         try {  
+            setProgressFunc(50);
             const response = await axios({
                 method: "post",
                 url:`${host}/api/auth/login`,
@@ -82,12 +91,15 @@ const AuthState = (props) => {
                 headers: {
                     "Content-Type": "application/json" //important
                 }
+                
             })
+            setProgressFunc(80);
             const data = await response.data;
             // console.log(data);
             SetCookie("bdigital-token", data.token);
             setUser([data.user_data])
             showAlertFunc("success", "LogedIn Successfully");
+            setProgressFunc(100);
             return data;
         } catch (error) {
             console.log("logInApiCall error********");
@@ -107,11 +119,14 @@ const AuthState = (props) => {
 
     const logOutFunc = async()=>{
         try {
+            setProgressFunc(50);
             setIsLogout(true);
             RemoveCookie("bdigital-token");
+            setProgressFunc(80);
             setUser([]);
             setUserReview(null);
             showAlertFunc("success", "LogedOut Successfully");
+            setProgressFunc(100);
         } catch (error) {
             console.log("logOutFunc error********");
             console.log(error);
