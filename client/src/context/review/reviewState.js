@@ -14,7 +14,6 @@ const ReviewState = (props)=>{
     const [isUserWantDelete, setIsUserWantDelete] = useState(false);
     const progress_context = useContext(ProgressContext);
     const {setProgressFunc} = progress_context;
-    setProgressFunc(50);
 
 
     // using "useContext" 📌 
