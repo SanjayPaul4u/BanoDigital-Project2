@@ -70,9 +70,11 @@ const getReviewFunc = async (req, res, next) =>{
 const getAllReviewFunc = async (req, res, next) =>{
     try {
         let success = false;
-        const review_data = await Reviews.find().sort({createdAt: -1});
+        const {page, pageContent} = req.query;
+        const review_data = await Reviews.find().sort({createdAt: -1}).limit(pageContent).skip(pageContent*(page-1));
         
         success = true;
+        // res.status(200).json({review_data});
         res.status(200).json({success, message: "Got All User Review successfully", review_data});
     } catch (error) {
         let success = false;

@@ -54,6 +54,13 @@ app.use(express.urlencoded({extended:false}));
 -----------------------------------------------------------
 8. Rest Api create
     submit contact🟢✔
+
+    ______________
+-----------------------------------------------------------
+8. Rest Api create
+    Get All Review by using query(/getallreview?page=4&pageContent=2)🟢✔
+    page=
+    pageContent
     ______________
         
     
