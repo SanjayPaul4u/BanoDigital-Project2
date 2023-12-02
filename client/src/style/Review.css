@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
 /* font-family: 'Kanit', sans-serif; */
 #main-review{
-    min-height: 90vh;
+    min-height: 70vh;
     max-height: auto;
     background-color: #efefef;
     padding-top: 4.5rem;
 }
 
 #main-review .row{
-    height: 100%;
+    min-height: 70vh;
+    max-height: auto;
     margin: 0; /* by default */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     
 }
 #main-review .row #left-review-row img{
@@ -31,6 +32,7 @@
     background: linear-gradient(to bottom right, #efefef 50%, #4c4c4c 100%);
     /* background-color: rgb(210, 91, 91); */
     padding: 1rem;
+    margin-bottom: 0;
 }
 #main-review .row #right-review-row h3, h4{
     color: #303030;

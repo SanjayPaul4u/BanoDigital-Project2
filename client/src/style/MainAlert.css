@@ -13,7 +13,8 @@
 #main-alert .alert{
     overflow: hidden;
     width: 40%;
-    height: 5rem;
+    min-height: 5rem;
+    max-height: auto;
     display: flex;
     align-items: center;
     animation: AlertSliding 0.5s linear 1;
@@ -43,4 +44,34 @@
         transform: translateX(0%);
     }
     
+}
+
+@media only screen and (max-width:991px) {
+    #main-alert .alert{
+        width: 60%;
+    }
+}
+@media only screen and (max-width:574px) {
+    #main-alert .alert{
+        width: 75%;
+        min-height: 3rem;
+        max-height: auto;
+    }
+    #main-alert{
+        padding: 0 1rem;
+    }
+}
+@media only screen and (max-width:460px) {
+    #main-alert .alert{
+        width: 100%;
+    }
+    #main-alert .main-alert-icon{
+        font-size: 1.1rem;
+    }
+    #main-alert .alert2{
+        font-size: 0.8rem;
+    }
+    #main-alert .alert1{
+        font-size: 0.8rem;
+    }
 }
