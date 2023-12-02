@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import ReviewContext from '../../context/review/reviewContext';
 import ScrallingReviewContext from '../../context/review/scrallingReviewContext';
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 
@@ -9,7 +10,7 @@ const DisplayReview = () => {
   const review_context = useContext(ReviewContext);
   const {capitalizedWord} = review_context;
   const scralling_review_context = useContext(ScrallingReviewContext);
-  const {getAllReviewApicall, allReview,} = scralling_review_context;
+  const {getAllReviewApicall, allReview, total_result, fetchMoreData} = scralling_review_context;
 
    // USE EFFECT 📌
    useEffect(() => {
@@ -19,11 +20,19 @@ const DisplayReview = () => {
 
   
 
-  // console.log(allReview);
+  console.log(total_result);
   return (
     <>
       {/* DISPLAYING REVIEW BY ROW */}
       {allReview && <div className="row">
+      <InfiniteScroll
+        dataLength={allReview.length}
+        next={fetchMoreData}
+        hasMore={allReview.length!==total_result  && allReview.length<total_result}
+        loader={<h5>Loading....</h5>}
+      >
+
+
         {allReview.map((element)=>{
           return <div key={element._id} className="col-12 col-md-12 col-xl-12">
           <div className='display-review-card'>
@@ -44,6 +53,8 @@ const DisplayReview = () => {
           </div>
         })}
         
+
+        </InfiniteScroll>
       </div>}
           
     </>
