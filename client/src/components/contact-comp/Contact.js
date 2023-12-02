@@ -29,6 +29,7 @@ const Contact = () => {
   // USE EFFECT FUNCTIONI 📌
   useEffect(() => {
     autoNameAndEmail();
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [])
   

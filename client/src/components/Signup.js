@@ -32,23 +32,24 @@ const Signup = () => {
       console.log("Invalid Creadential");
     }
   }
- 
-  
 
   // using "useLocation"
   const location = useLocation();
   const [path, setPath] = useState(location.pathname);
-  console.log(path);
+  
 
-   // using "useEffect TODO📌📌📌📌📌📌📌📌📌📌📌📌📌"
+   // using "useEffect 📌📌📌📌📌"
   useEffect(() => {
+    window.scrollTo(0, 0);
     setPath(location.pathname);
     if(GetCookie("bdigital-token") && path==="/signup"){
       navigate(-1);
-      console.log("okay");
     }
     // eslint-disable-next-line
-  }, [])
+  }, [location]);
+  
+
+  // console.log(path);
   return (
     <div className='container' id='main-signup'>
         <div id="sub-signup-div" className='col-10 col-md-6 col-xl-4'>

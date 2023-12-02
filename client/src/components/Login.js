@@ -1,12 +1,20 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../style/Login.css'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import AuthContext from '../context/auth/authContext'
+import GetCookie from '../hooks/getCookie'
 
 
 
-const Login = () => {
+
+const Login = () => { 
+  // using "useLocation"📌
+  const location = useLocation();
+
+  // STATES 📌
   const [userData, setUserData] = useState({email: "", password: ""});
+  const [path, setPath] = useState(location.pathname)
+
   // using "useNavigate"
   const navigate = useNavigate();
 
@@ -30,6 +38,18 @@ const Login = () => {
   const onChangeFunc = (event) =>{
     setUserData({...userData, [event.target.name]: event.target.value})
   }
+
+  // using "useEffect"
+  useEffect(() => {
+    setPath(location.pathname);
+    window.scrollTo(0, 0);
+
+    if(GetCookie("bdigital-token") && path==="/login"){
+      navigate(-1);
+    }
+    // eslint-disable-next-line
+  }, [location])
+  
 
   return (
     <div className='container' id='main-login'>
