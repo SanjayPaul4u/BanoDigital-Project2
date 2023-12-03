@@ -6,7 +6,7 @@ import ProgressContext from "../progress/progressContext";
 
 
 const ScrallingReviewState = (props) =>{
-    const host = "http://127.0.0.1:5500"
+    const host = process.env.REACT_APP_SERVER;
 
     // using "useState" 📌
     const [allReview, setAllReview] = useState(null);

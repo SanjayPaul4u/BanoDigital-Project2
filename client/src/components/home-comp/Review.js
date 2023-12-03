@@ -4,6 +4,7 @@ import WebDesignPng from '../../images/wev-design.png'
 import {Link} from 'react-router-dom'
 import ReviewContext from '../../context/review/reviewContext'
 import ScrallingReviewContext from '../../context/review/scrallingReviewContext'
+import GetCookie from '../../hooks/getCookie'
 
 
 
@@ -16,7 +17,9 @@ const Review = () => {
 
    // USE EFFECT 📌
    useEffect(() => {
-    getAllReviewApicall();
+    if(GetCookie("bdigital-token")){
+      getAllReviewApicall();
+    }
   // eslint-disable-next-line
 }, [])
   return (

@@ -104,3 +104,8 @@ frontend: 31. Adding Top Loading -completed
 frontend: 32. INFINITE REVIEW SCRALLING - Completed📌📌📌
         - npm i react-infinite-scroll-component
         - see the file for better understandgin (news app's file also);
+
+frontend: 32. Environment Variable Create 
+        - .env.local
+        - REACT_APP_YOUR_API_NAME=valuevaluevaluevalue
+        - proccess.env.REACT_APP_YOUR_API_NAME

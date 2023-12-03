@@ -11,7 +11,7 @@ import ProgressContext from "../progress/progressContext";
 
 
 const AuthState = (props) => {
-    const host = "http://127.0.0.1:5500"
+    const host = process.env.REACT_APP_SERVER;
     const [user, setUser] = useState([]);
 
     // using "useContext" 📌

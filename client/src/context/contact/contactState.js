@@ -7,7 +7,7 @@ import ProgressContext from '../progress/progressContext';
 
 
 const ContactState = (props) =>{  
-    const host = "http://127.0.0.1:5500" 
+    const host = process.env.REACT_APP_SERVER;
     // using "useContext" 
     const alert_context = useContext(AlertContext);
     const { showAlertFunc } = alert_context;
