@@ -74,7 +74,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item" onClick={responsiveClickFunc}>
-                <a className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" href="/#main-review">Rating & Reviews</a>
+                <Link className={`nav-link ${!IsScroll?"default-text-color":"my-text-color"}`} aria-current="page" to="/mainreview">Rating & Reviews</Link>
                 </li>
 
                 <li className="nav-item" onClick={responsiveClickFunc}>

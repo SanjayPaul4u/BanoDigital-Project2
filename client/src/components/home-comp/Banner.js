@@ -4,6 +4,8 @@ import img1 from "../../images/img1.png"
 import img2 from "../../images/img2.png"
 import img3 from "../../images/img3.png"
 import img4 from "../../images/img4.png"
+import { Link } from 'react-router-dom'
+
 
 const Banner = () => {
   return (
@@ -25,7 +27,7 @@ const Banner = () => {
 
                     <div className='mt-4'>
                         {/* button todo */}
-                        <a href='/' id='banner-btn' className="btn btn-primary">Order Now</a>
+                        <Link to='/contact' id='banner-btn' className="btn btn-primary">Order Now</Link>
                     </div>
                     
                     <div className='textForUnderstandUser1'>

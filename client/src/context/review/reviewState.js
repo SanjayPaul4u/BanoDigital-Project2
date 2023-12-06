@@ -17,7 +17,7 @@ const ReviewState = (props)=>{
     const {setProgressFunc} = progress_context;
     const scralling_review_context = useContext(ScrallingReviewContext);
     const {getAllReviewApicall} = scralling_review_context;
-
+    //, setAllReview, allReview , setPage
 
 
     // using "useContext" 📌 
@@ -97,10 +97,10 @@ const ReviewState = (props)=>{
                 headers: {
                     "Content-Type": "application/json" //important
                 }
-            })
+            })            
             setProgressFunc(80);
             const data = await response.data;
-            console.log(data);
+            // console.log(data);
             showAlertFunc("success", "Edited Rating & Review Successfully");
             getAllReviewApicall();
             setUserReview([data.updated_review_data]);

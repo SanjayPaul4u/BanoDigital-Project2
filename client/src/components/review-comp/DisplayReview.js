@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import ReviewContext from '../../context/review/reviewContext';
 import ScrallingReviewContext from '../../context/review/scrallingReviewContext';
 import InfiniteScroll from 'react-infinite-scroll-component'
+import Spinner from '../Spinner';
+
 
 
 
@@ -14,22 +16,27 @@ const DisplayReview = () => {
 
    // USE EFFECT 📌
    useEffect(() => {
+    if(allReview===null){
       getAllReviewApicall();
+    }
     // eslint-disable-next-line
   }, [])
 
   
 
-  console.log(total_result);
+  // console.log(allReview);
   return (
     <>
+      {allReview===null && <Spinner/>}
+
+
       {/* DISPLAYING REVIEW BY ROW */}
       {allReview && <div className="row">
       <InfiniteScroll
         dataLength={allReview.length}
         next={fetchMoreData}
         hasMore={allReview.length!==total_result  && allReview.length<total_result}
-        loader={<h5>Loading....</h5>}
+        loader={<Spinner/>}
       >
 
 

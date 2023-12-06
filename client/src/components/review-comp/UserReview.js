@@ -5,6 +5,7 @@ import ReviewDeleteAlert from '../alers-comp/ReviewDeleteAlert';
 import EditReviewModal from './EditReviewModal';
 
 
+
 const UserReview = () => {
   const [reviewDetailForEdit, setReviewDetailForEdit] = useState({starCount:0, reviewMsg:""});
   const [id, setId] = useState("");
@@ -33,7 +34,10 @@ const UserReview = () => {
 
   // console.log(id);
   return (
-    <>
+    <>  
+        {userReview===null && <p className='text-center' style={{color: "#7a7a7a", fontWeight:"500"}}>No Rating & Review Added</p>}
+
+
         {userReview && <div id="user-review-div">
             <div className='d-flex justify-content-between'>
               <h5>Your Review</h5>

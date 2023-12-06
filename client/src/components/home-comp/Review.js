@@ -4,8 +4,7 @@ import WebDesignPng from '../../images/wev-design.png'
 import {Link} from 'react-router-dom'
 import ReviewContext from '../../context/review/reviewContext'
 import ScrallingReviewContext from '../../context/review/scrallingReviewContext'
-import GetCookie from '../../hooks/getCookie'
-
+import Spinner from '../Spinner'
 
 
 const Review = () => {
@@ -17,7 +16,7 @@ const Review = () => {
 
    // USE EFFECT 📌
    useEffect(() => {
-    if(GetCookie("bdigital-token")){
+    if(allReview===null){
       getAllReviewApicall();
     }
   // eslint-disable-next-line
@@ -45,6 +44,7 @@ const Review = () => {
 
           {/* REVIEW DIV */}
           <div id='reviews-div'>
+            {allReview===null && <Spinner/>}
 
             {allReview && allReview.map((e, index)=>{
               if(index<2){

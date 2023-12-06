@@ -25,17 +25,19 @@ const ScrallingReviewState = (props) =>{
         try {
             setProgressFunc(50);
             setloading(true);
-
             const response = await axios({
                 method:"get",
-                url: `${host}/api/review/getallreview?page=${page}&pageContent=${page_content}`,
+                url: `${host}/api/review/getallreview?page=1&pageContent=${page_content}`,
                 headers: {
                     "Content-Type": "application/json" //important
                 }
             })
             setProgressFunc(80);
             const data = await response.data;
-            // console.log(data.review_data);
+            // console.log(data);
+            // console.log(allReview);
+
+            setPage(1);
             setAllReview(data.review_data);
             setTotal_result(data.totalResult);
             setloading(false);
@@ -51,7 +53,6 @@ const ScrallingReviewState = (props) =>{
         try {
             setProgressFunc(50);
             setloading(true);
-
             const response = await axios({
                 method:"get",
                 url: `${host}/api/review/getallreview?page=${page+1}&pageContent=${page_content}`,
@@ -74,7 +75,7 @@ const ScrallingReviewState = (props) =>{
         }
     }
 
-    return <ScrallingReviewContext.Provider value={{getAllReviewApicall, allReview, loading, total_result, fetchMoreData}}>
+    return <ScrallingReviewContext.Provider value={{getAllReviewApicall, allReview, loading, total_result, fetchMoreData, setAllReview, setPage}}>
         {props.children}
     </ScrallingReviewContext.Provider>
 }
